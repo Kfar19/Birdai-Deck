@@ -12,19 +12,6 @@ const accelerators = [
 export function WhyNow() {
   return (
     <div className="space-y-10">
-      {/* Lead-in */}
-      <motion.div
-        initial={{ opacity: 0, y: 14 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ amount: 0.5, once: true }}
-        transition={{ duration: 0.5 }}
-        className="max-w-3xl"
-      >
-        <div className="text-xl leading-relaxed text-zinc-200 md:text-2xl">
-          Execution is becoming the new market structure.
-        </div>
-      </motion.div>
-
       {/* Accelerators */}
       <motion.div
         initial={{ opacity: 0, y: 12 }}
