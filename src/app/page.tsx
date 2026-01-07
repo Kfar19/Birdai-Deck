@@ -81,7 +81,7 @@ export default function Home() {
       <Section
         sectionIndex={7}
         kicker="08 — THE REQUIREMENT"
-        title="This is only possible if you operate the infrastructure"
+        title="Execution intelligence is only possible if you operate the infrastructure."
       >
         <InfraOwnership />
       </Section>
