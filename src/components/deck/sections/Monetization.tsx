@@ -5,22 +5,29 @@ import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 
 const flows = [
   {
-    title: "Infrastructure yield",
-    sub: "Validator rewards + MEV share",
-    mechanism: "Operate validators and capture block rewards, tips, and MEV redistribution.",
-    rate: "4–8% APY on staked capital",
+    title: "Intelligence APIs",
+    sub: "Subscriptions",
+    customers: "Wallets, protocols, funds, market makers",
+    mechanism: "Institution-grade access to execution traces, MEV classification, and validator analytics.",
+    rate: "$5K–$50K / month per seat",
+    highlight: true,
   },
   {
     title: "Execution fees",
-    sub: "Best-execution routing",
-    mechanism: "Per-execution fees for routing trades through optimal paths with measurable improvement.",
+    sub: "Routing / auctions",
+    customers: "Traders, protocols, aggregators",
+    mechanism: "Take-rate on flow routed through optimal paths with measurable execution improvement.",
     rate: "1–5 bps per trade",
+    highlight: true,
   },
   {
-    title: "Intelligence APIs",
-    sub: "Execution data subscriptions",
-    mechanism: "Institution-grade access to execution traces, MEV classification, and validator analytics.",
-    rate: "$5K–$50K / month per seat",
+    title: "Infrastructure yield",
+    sub: "Bootstrap layer",
+    customers: "Network rewards",
+    mechanism: "Validator rewards + MEV share. Offsets infra cost, strengthens moat.",
+    rate: "4–8% APY",
+    note: "Infra yield helps fund the system (not the business model)",
+    highlight: false,
   },
 ];
 
@@ -36,6 +43,22 @@ export function Monetization() {
       transition={{ duration: 0.6 }}
       className="rounded-2xl border border-white/[0.08] bg-white/[0.02] p-5 md:p-10"
     >
+      {/* Lead-in */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ amount: 0.6, once: true }}
+        transition={{ duration: 0.5 }}
+        className="mb-8"
+      >
+        <p className="text-lg font-medium text-zinc-200 md:text-xl">
+          Who pays and why
+        </p>
+        <p className="mt-2 text-base text-zinc-400">
+          Revenue flows from execution intelligence—subscriptions and fees with venture-scale margins.
+        </p>
+      </motion.div>
+
       <div className="grid gap-4 md:grid-cols-3 md:gap-6">
         {flows.map((f, idx) => {
           const isExpanded = expandedIdx === idx;
@@ -46,7 +69,9 @@ export function Monetization() {
               className={`relative cursor-pointer rounded-xl border text-left transition-all duration-200 ${
                 isExpanded
                   ? "border-amber-500/40 bg-amber-500/[0.06]"
-                  : "border-white/[0.06] bg-black/30 hover:border-white/[0.12]"
+                  : f.highlight
+                  ? "border-white/[0.08] bg-black/30 hover:border-white/[0.15]"
+                  : "border-white/[0.04] bg-black/20 hover:border-white/[0.1]"
               } p-6`}
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -56,7 +81,9 @@ export function Monetization() {
               whileTap={{ scale: 0.98 }}
             >
               <div className="flex items-center justify-between">
-                <div className="text-lg font-semibold text-white">{f.title}</div>
+                <div className={`text-lg font-semibold ${f.highlight ? "text-white" : "text-zinc-400"}`}>
+                  {f.title}
+                </div>
                 <motion.span
                   className="text-xs text-zinc-500"
                   animate={{ rotate: isExpanded ? 180 : 0 }}
@@ -65,8 +92,11 @@ export function Monetization() {
                   ▼
                 </motion.span>
               </div>
-              <div className="mt-1 font-mono text-xs uppercase tracking-widest text-zinc-400">
+              <div className="mt-1 font-mono text-xs uppercase tracking-widest text-zinc-500">
                 {f.sub}
+              </div>
+              <div className="mt-3 text-sm text-zinc-400">
+                {f.customers}
               </div>
 
               {/* Expanded details */}
@@ -82,9 +112,18 @@ export function Monetization() {
                     <div className="text-sm leading-relaxed text-zinc-300">
                       {f.mechanism}
                     </div>
-                    <div className="mt-3 inline-block rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-3 py-1.5 font-mono text-sm font-medium text-emerald-400">
+                    <div className={`mt-3 inline-block rounded-lg border px-3 py-1.5 font-mono text-sm font-medium ${
+                      f.highlight
+                        ? "border-emerald-500/30 bg-emerald-500/10 text-emerald-400"
+                        : "border-zinc-600/30 bg-zinc-800/50 text-zinc-400"
+                    }`}>
                       {f.rate}
                     </div>
+                    {f.note && (
+                      <div className="mt-3 text-xs italic text-zinc-500">
+                        {f.note}
+                      </div>
+                    )}
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -156,9 +195,9 @@ export function Monetization() {
           {/* Nodes */}
           {[
             { x: 300, y: 120, label: "INFRA" },
-            { x: 300, y: 30, label: "YIELD" },
-            { x: 130, y: 40, label: "FEES" },
-            { x: 470, y: 40, label: "APIS" },
+            { x: 130, y: 40, label: "APIS" },
+            { x: 300, y: 30, label: "FEES" },
+            { x: 470, y: 40, label: "YIELD" },
           ].map((n, i) => (
             <motion.g
               key={n.label}

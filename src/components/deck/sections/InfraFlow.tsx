@@ -54,10 +54,10 @@ export function InfraFlow() {
         className="mb-8"
       >
         <p className="text-lg leading-relaxed text-zinc-200 md:text-xl">
-          We operate the source infrastructure—validators and custom indexers—that reconstructs market state as it changes.
+          We run validators + custom indexers that reconstruct market state in real time.
         </p>
         <p className="mt-3 text-base leading-relaxed text-zinc-400 md:text-lg">
-          That gives Birdai first-principles visibility into ordering, fills, and state transitions in real time—not a delayed, abstracted view.
+          That produces execution truth—ordering, fills, attribution—before price hides it.
         </p>
       </motion.div>
 

@@ -78,6 +78,9 @@ export function Hero() {
             <p className="text-lg font-medium leading-relaxed text-zinc-100 md:text-xl">
               We run execution infrastructure. The intelligence is what comes out.
             </p>
+            <p className="mt-3 text-sm leading-relaxed text-zinc-400 md:text-base">
+              We operate validators + custom indexers to reconstruct execution in real time.
+            </p>
           </div>
         </motion.div>
 
@@ -96,7 +99,7 @@ export function Hero() {
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             />
             <div className="relative inline-flex flex-wrap items-center justify-center gap-2 rounded-xl border border-amber-500/30 bg-gradient-to-b from-amber-500/[0.08] to-amber-500/[0.03] px-5 py-4 font-mono text-xs shadow-[0_0_50px_-15px_rgba(251,191,36,0.25)] md:gap-4 md:px-6 md:py-4 md:text-sm">
-              <span className="text-amber-200/70">executions indexed</span>
+              <span className="text-amber-200/70">Sui executions indexed</span>
               <span className="text-2xl font-bold tracking-tight text-white md:text-3xl">
                 <LiveCounter
                   start={deck.hero.executionsIndexedStart}
@@ -113,7 +116,7 @@ export function Hero() {
             </div>
           </div>
           <span className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">
-            since launch
+            last 30 days
           </span>
         </motion.div>
       </div>

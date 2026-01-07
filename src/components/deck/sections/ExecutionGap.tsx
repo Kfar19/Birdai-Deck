@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const consequences = [
   "Slippage + adverse selection",
-  "MEV leakage",
+  "Value leakage (MEV)",
   "Liquidation cascades + \"mysterious\" prints",
   "No auditable record of what actually happened",
 ];

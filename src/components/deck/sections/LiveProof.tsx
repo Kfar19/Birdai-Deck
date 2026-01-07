@@ -189,7 +189,7 @@ export function LiveProof() {
             }`}
           >
             <span className="text-sm uppercase tracking-widest opacity-60">
-              MEV opportunity
+              Estimated extractable value
             </span>
             <span className="text-xl font-semibold">{formatUSD(s.pnlDelta)}</span>
           </motion.div>

@@ -131,7 +131,7 @@ export function CategoryProblem() {
               Execution Intelligence & Market Infrastructure
             </div>
             <div className="mt-1 font-mono text-[10px] uppercase tracking-widest text-amber-400/70 md:text-[11px]">
-              A new public-market category for programmable markets
+              A new infrastructure category for programmable markets
             </div>
           </motion.div>
         </motion.div>

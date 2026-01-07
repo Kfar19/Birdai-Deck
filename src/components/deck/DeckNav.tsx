@@ -3,7 +3,7 @@
 import { useEffect, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const SECTION_COUNT = 14;
+const SECTION_COUNT = 15;
 
 export function DeckNav() {
   const [activeSection, setActiveSection] = useState(0);

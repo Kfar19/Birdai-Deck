@@ -12,7 +12,7 @@ const stateUpdates = [
 
 const implications = [
   "Rules aren't written — they run in production",
-  "Edge cases are where PnL lives",
+  "Edge cases are where profit lives",
   "Fairness is a market-structure / code-quality problem",
   "Speed of implementation changes outcomes",
 ];
@@ -30,6 +30,9 @@ export function Thesis() {
       >
         <div className="text-2xl font-semibold leading-snug text-white md:text-3xl">
           Markets are state machines.
+        </div>
+        <div className="mt-3 text-base text-zinc-400 md:text-lg">
+          Execution = ordering + timing + liquidations + state updates.
         </div>
 
         {/* State update chips */}

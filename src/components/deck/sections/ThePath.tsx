@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const steps = [
   { label: "Validators", sub: "operate native infrastructure", status: "done" },
   { label: "Custom Indexers", sub: "reconstruct execution reality", status: "done" },
-  { label: "Execution Observatory", sub: "make MEV visible at scale", status: "in-progress" },
+  { label: "Execution Observatory", sub: "measure execution quality at scale", status: "in-progress" },
   { label: "Best Execution Layer", sub: "transparent, competitive, fair", status: "future" },
 ];
 

@@ -14,6 +14,7 @@ import { ThePath } from "@/components/deck/sections/ThePath";
 import { Monetization } from "@/components/deck/sections/Monetization";
 import { Raise } from "@/components/deck/sections/Raise";
 import { UseOfFunds } from "@/components/deck/sections/UseOfFunds";
+import { Team } from "@/components/deck/sections/Team";
 import { Close } from "@/components/deck/sections/Close";
 
 export default function Home() {
@@ -127,7 +128,16 @@ export default function Home() {
         <UseOfFunds />
       </Section>
 
-      {/* 14) CLOSE — section 13 */}
+      {/* 14) TEAM — section 13 */}
+      <Section
+        sectionIndex={13}
+        kicker="14 — TEAM"
+        title="Built by operators"
+      >
+        <Team />
+      </Section>
+
+      {/* 15) CLOSE — section 14 */}
       <Close />
     </div>
   );

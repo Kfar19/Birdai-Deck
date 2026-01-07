@@ -1,161 +1,138 @@
 "use client";
 
 import deck from "@/data/deck.json";
-import { AnimatePresence, motion } from "framer-motion";
-import { useMemo, useState } from "react";
-
-type Item = { label: string; t: string; note: string };
+import { motion } from "framer-motion";
 
 export function BlindSpot() {
-  const [reveal, setReveal] = useState(false);
   const leftItems = deck.blindSpot.thought;
-
-  const rightItems: Item[] = useMemo(
-    () => (reveal ? deck.blindSpot.actual : deck.blindSpot.thought),
-    [reveal],
-  );
+  const rightItems = deck.blindSpot.actual;
 
   return (
-    <div className="grid gap-10 lg:grid-cols-2">
-      {/* LEFT: abstracted view */}
-      <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ amount: 0.5, once: true }}
-        transition={{ duration: 0.55 }}
-        className="rounded-2xl border border-white/[0.08] bg-white/[0.025] p-8 shadow-[0_0_60px_-20px_rgba(255,255,255,0.06)]"
-      >
-        <div className="font-mono text-[11px] uppercase tracking-[0.26em] text-zinc-400">
-          What people think happened
-        </div>
-        <div className="mt-6 space-y-4 font-mono text-[15px] leading-snug">
-          {leftItems.map((it, idx) => (
-            <motion.div
-              key={it.label}
-              initial={{ opacity: 0, x: -6 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ amount: 0.7, once: true }}
-              transition={{ duration: 0.4, delay: idx * 0.06 }}
-              className="flex items-center justify-between gap-4 text-white/80"
-            >
-              <div className="flex items-baseline gap-4">
-                <span className="font-medium text-white">{it.label}</span>
-                <span className="hidden text-xs text-zinc-500 md:inline">
-                  {it.note}
-                </span>
-              </div>
-              <span className="font-mono text-xs text-zinc-500">{it.t}</span>
-            </motion.div>
-          ))}
-        </div>
-      </motion.div>
-
-      {/* RIGHT: reconstructed reality */}
-      <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ amount: 0.5, once: true }}
-        transition={{ duration: 0.55, delay: 0.08 }}
-        className={`relative rounded-2xl border p-8 shadow-[0_0_60px_-20px_rgba(255,255,255,0.06)] transition-colors duration-300 ${
-          reveal
-            ? "border-amber-500/40 bg-gradient-to-br from-amber-500/[0.04] to-transparent"
-            : "border-white/[0.08] bg-white/[0.025]"
-        }`}
-      >
-        <div className="flex items-start justify-between gap-6">
-          <div className="font-mono text-[11px] uppercase tracking-[0.26em] text-zinc-400">
-            What actually happened
-          </div>
-
-          {/* Toggle */}
-          <button
-            type="button"
-            onClick={() => setReveal((x) => !x)}
-            className={`group relative flex h-7 w-14 shrink-0 items-center rounded-full border transition-colors duration-200 ${
-              reveal
-                ? "border-amber-500/50 bg-amber-500/20"
-                : "border-white/15 bg-black/40"
-            }`}
-            aria-pressed={reveal}
-            aria-label="Reveal reconstruction"
-          >
-            <motion.span
-              className={`absolute left-0.5 h-5 w-5 rounded-full transition-colors ${
-                reveal ? "bg-amber-400" : "bg-white/30"
-              }`}
-              animate={{ x: reveal ? 28 : 0 }}
-              transition={{ type: "spring", stiffness: 420, damping: 28 }}
-            />
-            <span className="absolute right-full mr-3 whitespace-nowrap font-mono text-[11px] uppercase tracking-widest text-zinc-500 transition-colors group-hover:text-zinc-400">
-              Reveal
-            </span>
-          </button>
-        </div>
-
+    <div className="flex flex-col gap-8">
+      <div className="grid gap-6 lg:grid-cols-2 lg:gap-10">
+        {/* LEFT: abstracted view */}
         <motion.div
-          layout
-          className="mt-6 space-y-4 font-mono text-[15px] leading-snug"
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ amount: 0.5, once: true }}
+          transition={{ duration: 0.55 }}
+          className="rounded-2xl border border-white/[0.08] bg-white/[0.025] p-6 shadow-[0_0_60px_-20px_rgba(255,255,255,0.06)] md:p-8"
         >
-          <AnimatePresence mode="popLayout">
-            {rightItems.map((it) => (
+          <div className="font-mono text-[11px] uppercase tracking-[0.26em] text-zinc-400">
+            What people think happened
+          </div>
+          <div className="mt-6 space-y-4 font-mono text-[15px] leading-snug">
+            {leftItems.map((it, idx) => (
               <motion.div
                 key={it.label}
-                layout
-                initial={{ opacity: 0, x: 10 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -10 }}
-                transition={{ duration: 0.2 }}
-                className="flex items-center justify-between gap-4 text-white/80"
+                initial={{ opacity: 0, x: -6 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ amount: 0.7, once: true }}
+                transition={{ duration: 0.4, delay: idx * 0.06 }}
+                className="flex items-center justify-between gap-4 rounded-lg border border-white/[0.04] bg-white/[0.02] px-4 py-3 text-white/80"
               >
-                <div className="flex items-baseline gap-4">
-                  <span
-                    className={`font-medium ${
-                      reveal && it.label === "arb capture"
-                        ? "text-amber-300"
-                        : "text-white"
-                    }`}
-                  >
-                    {it.label}
-                  </span>
+                <div className="flex items-baseline gap-3">
+                  <span className="font-medium text-white">{it.label}</span>
                   <span className="hidden text-xs text-zinc-500 md:inline">
                     {it.note}
                   </span>
                 </div>
-                <span className="font-mono text-xs text-zinc-500">{it.t}</span>
+                <span className="shrink-0 rounded bg-zinc-800 px-2 py-0.5 font-mono text-xs text-zinc-400">
+                  {it.t}
+                </span>
               </motion.div>
             ))}
-          </AnimatePresence>
+          </div>
+          <div className="mt-6 rounded-xl border border-white/10 bg-black/30 px-5 py-4 text-center text-sm text-zinc-400">
+            Looks clean until you reconstruct execution.
+          </div>
         </motion.div>
 
+        {/* RIGHT: reconstructed reality - ALWAYS VISIBLE */}
         <motion.div
-          className={`mt-8 rounded-xl border px-5 py-4 text-sm font-medium transition-colors duration-200 ${
-            reveal
-              ? "border-amber-500/30 bg-amber-500/10 text-amber-200"
-              : "border-white/10 bg-black/30 text-zinc-400"
-          }`}
-          animate={reveal ? { scale: 1.01 } : { scale: 1 }}
-          transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ amount: 0.5, once: true }}
+          transition={{ duration: 0.55, delay: 0.08 }}
+          className="relative rounded-2xl border border-amber-500/40 bg-gradient-to-br from-amber-500/[0.04] to-transparent p-6 shadow-[0_0_60px_-20px_rgba(251,191,36,0.1)] md:p-8"
         >
-          {reveal
-            ? "Same trades. Different ordering. Different outcome."
-            : "Looks clean until you reconstruct execution."}
-        </motion.div>
+          <div className="font-mono text-[11px] uppercase tracking-[0.26em] text-amber-400/80">
+            What actually happened
+          </div>
+          <div className="mt-6 space-y-4 font-mono text-[15px] leading-snug">
+            {rightItems.map((it, idx) => {
+              const isReordered = it.label === "arb capture";
+              return (
+                <motion.div
+                  key={it.label}
+                  initial={{ opacity: 0, x: 10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ amount: 0.7, once: true }}
+                  transition={{ duration: 0.4, delay: idx * 0.06 }}
+                  className={`flex items-center justify-between gap-4 rounded-lg border px-4 py-3 ${
+                    isReordered
+                      ? "border-amber-500/40 bg-amber-500/10"
+                      : "border-white/[0.04] bg-white/[0.02]"
+                  }`}
+                >
+                  <div className="flex items-baseline gap-3">
+                    <span
+                      className={`font-medium ${
+                        isReordered ? "text-amber-300" : "text-white"
+                      }`}
+                    >
+                      {it.label}
+                      {isReordered && (
+                        <span className="ml-2 text-[10px] uppercase tracking-wider text-amber-400">
+                          ← moved first
+                        </span>
+                      )}
+                    </span>
+                    <span className="hidden text-xs text-zinc-500 md:inline">
+                      {it.note}
+                    </span>
+                  </div>
+                  <span
+                    className={`shrink-0 rounded px-2 py-0.5 font-mono text-xs ${
+                      isReordered
+                        ? "bg-amber-500/20 text-amber-300"
+                        : "bg-zinc-800 text-zinc-400"
+                    }`}
+                  >
+                    {it.t}
+                  </span>
+                </motion.div>
+              );
+            })}
+          </div>
 
-        {/* PnL impact callout — only shows after reveal */}
-        <AnimatePresence>
-          {reveal && (
-            <motion.div
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 8 }}
-              transition={{ duration: 0.3, delay: 0.15 }}
-              className="mt-4 flex items-center justify-between rounded-xl border border-red-500/30 bg-red-500/10 px-5 py-4"
-            >
-              <span className="text-sm text-zinc-300">Value extracted before user order landed</span>
-              <span className="font-mono text-lg font-semibold text-red-400">−$312</span>
-            </motion.div>
-          )}
-        </AnimatePresence>
+          {/* Outcome callout */}
+          <motion.div
+            initial={{ opacity: 0, y: 8 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ amount: 0.7, once: true }}
+            transition={{ duration: 0.4, delay: 0.25 }}
+            className="mt-6 rounded-xl border border-amber-500/30 bg-amber-500/10 px-5 py-4 text-center text-sm font-medium text-amber-200"
+          >
+            Same trades. Different ordering. Different outcome.
+          </motion.div>
+        </motion.div>
+      </div>
+
+      {/* Bottom callout - VALUE EXTRACTED */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.98 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ amount: 0.6, once: true }}
+        transition={{ duration: 0.4, delay: 0.3 }}
+        className="mx-auto flex w-full max-w-2xl flex-col items-center justify-between gap-4 rounded-2xl border border-red-500/30 bg-red-500/10 px-6 py-5 sm:flex-row md:px-8 md:py-6"
+      >
+        <span className="text-base text-zinc-300 md:text-lg">
+          Value extracted before the user order landed:
+        </span>
+        <span className="font-mono text-2xl font-bold text-red-400 md:text-3xl">
+          −$312
+        </span>
       </motion.div>
     </div>
   );
