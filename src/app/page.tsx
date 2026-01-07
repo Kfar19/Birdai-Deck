@@ -108,7 +108,7 @@ export default function Home() {
       <Section
         sectionIndex={10}
         kicker="11 — WHY NOW"
-        title="Acceleration"
+        title=""
       >
         <WhyNow />
       </Section>
