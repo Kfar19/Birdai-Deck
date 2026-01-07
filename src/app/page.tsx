@@ -12,6 +12,8 @@ import { InfraOwnership } from "@/components/deck/sections/InfraOwnership";
 import { ThePath } from "@/components/deck/sections/ThePath";
 import { Monetization } from "@/components/deck/sections/Monetization";
 import { WhyNow } from "@/components/deck/sections/WhyNow";
+import { Raise } from "@/components/deck/sections/Raise";
+import { UseOfFunds } from "@/components/deck/sections/UseOfFunds";
 import { Close } from "@/components/deck/sections/Close";
 
 export default function Home() {
@@ -113,7 +115,19 @@ export default function Home() {
         <WhyNow />
       </Section>
 
-      {/* 12) CLOSE — section 11 */}
+      {/* 12) THE RAISE — section 11 */}
+      <Raise />
+
+      {/* 13) USE OF FUNDS + MILESTONES — section 12 */}
+      <Section
+        sectionIndex={12}
+        kicker="13 — USE OF FUNDS + MILESTONES"
+        title=""
+      >
+        <UseOfFunds />
+      </Section>
+
+      {/* 14) CLOSE — section 13 */}
       <Close />
     </div>
   );

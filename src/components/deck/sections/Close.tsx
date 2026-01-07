@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export function Close() {
   return (
-    <section className="deck-section relative flex min-h-screen flex-col items-center justify-center px-4 text-center sm:px-8" data-section={11}>
+    <section className="deck-section relative flex min-h-screen flex-col items-center justify-center px-4 text-center sm:px-8" data-section={13}>
       {/* Subtle radial glow */}
       <div
         aria-hidden
