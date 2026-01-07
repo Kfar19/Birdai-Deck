@@ -7,16 +7,16 @@ const founders = [
     name: "Kevin Farrelly",
     role: "CEO",
     bullets: [
-      "10+ years in execution and market infrastructure",
-      "Built trading systems processing $B+ daily volume",
+      "Sold last company to Franklin Templeton",
+      "Built early-stage venture arm for Franklin Templeton",
     ],
   },
   {
     name: "Greg",
     role: "CTO",
     bullets: [
-      "Former HFT infrastructure lead",
-      "Deep expertise in low-latency systems and blockchain validators",
+      "Built trading systems at Citadel",
+      "Deep expertise in low-latency infrastructure",
     ],
   },
 ];
@@ -76,7 +76,7 @@ export function Team() {
         className="max-w-2xl rounded-2xl border border-amber-500/20 bg-amber-500/[0.04] px-6 py-5 text-center md:px-8 md:py-6"
       >
         <p className="text-base leading-relaxed text-zinc-300 md:text-lg">
-          The team has built execution infrastructure at scale—now applying that to make markets transparent and fair.
+          Partnered at Franklin Templeton building early-stage ventures—now building Birdai to make execution transparent and fair.
         </p>
       </motion.div>
     </div>
