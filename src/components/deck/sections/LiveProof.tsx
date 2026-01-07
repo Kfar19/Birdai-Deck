@@ -202,7 +202,7 @@ export function LiveProof() {
             transition={{ delay: 0.5, duration: 0.4 }}
             className="mt-6 text-center font-mono text-[11px] uppercase tracking-[0.2em] text-zinc-500"
           >
-            This is what execution intelligence sees.
+            This is what execution intelligence sees—before "price" tells the story.
           </motion.div>
         </div>
       </div>
