@@ -53,7 +53,7 @@ export function InfraFlow() {
         transition={{ duration: 0.5 }}
         className="mb-8 text-center text-lg leading-relaxed text-zinc-300 md:text-xl"
       >
-        We operate at the tip of the blockchain, continuously ingesting finalized execution state and object transitions.
+        We run the validators and indexers that power onchain execution. This gives us visibility into market dynamics that no external observer can access.
       </motion.p>
 
       {/* Nodes */}
