@@ -36,7 +36,7 @@ export default function Home() {
       <Section
         sectionIndex={2}
         kicker="03 — THE PROBLEM"
-        title="Execution is now measurable. No one owns it."
+        title="Execution is now measurable — but it has no owner."
       >
         <ExecutionGap />
       </Section>
