@@ -23,31 +23,31 @@ export default function Home() {
       {/* 1) HERO — section 0 */}
       <Hero />
 
-      {/* 2) THE THESIS — section 1 */}
+      {/* 2) THE CATEGORY PROBLEM — section 1 (moved before thesis) */}
       <Section
         sectionIndex={1}
-        kicker="02 — THE THESIS"
-        title="Price is an output. Execution is the system."
+        kicker="02 — THE CATEGORY PROBLEM"
+        title="Programmable markets created a new layer: execution infrastructure."
+      >
+        <CategoryProblem />
+      </Section>
+
+      {/* 3) THE THESIS — section 2 */}
+      <Section
+        sectionIndex={2}
+        kicker="03 — THE THESIS"
+        title="Price is the output. Execution is the system."
       >
         <Thesis />
       </Section>
 
-      {/* 3) THE PROBLEM — section 2 */}
+      {/* 4) THE PROBLEM — section 3 */}
       <Section
-        sectionIndex={2}
-        kicker="03 — THE PROBLEM"
+        sectionIndex={3}
+        kicker="04 — THE PROBLEM"
         title="Execution is now measurable — but it has no owner."
       >
         <ExecutionGap />
-      </Section>
-
-      {/* 4) THE CATEGORY PROBLEM — section 3 */}
-      <Section
-        sectionIndex={3}
-        kicker="04 — THE CATEGORY PROBLEM"
-        title="No existing bucket"
-      >
-        <CategoryProblem />
       </Section>
 
       {/* 5) THE BLIND SPOT — section 4 */}
