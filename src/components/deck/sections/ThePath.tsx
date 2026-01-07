@@ -88,43 +88,6 @@ export function ThePath() {
         </div>
       </motion.div>
 
-      {/* Founder credibility */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ amount: 0.6, once: true }}
-        transition={{ duration: 0.5, delay: 0.1 }}
-        className="flex flex-col items-center gap-6 text-center md:flex-row md:justify-center md:gap-12 md:text-left"
-      >
-        <div className="max-w-xs">
-          <div className="font-mono text-[11px] uppercase tracking-widest text-zinc-500">
-            Kevin
-          </div>
-          <div className="mt-1 text-sm text-zinc-300">
-            Founded Random Forest Capital, acquired by Franklin Templeton. Data-first investor who builds thesis from execution analysis.
-          </div>
-        </div>
-        <div className="hidden h-10 w-px bg-white/10 md:block" />
-        <div className="max-w-xs">
-          <div className="font-mono text-[11px] uppercase tracking-widest text-zinc-500">
-            Greg
-          </div>
-          <div className="mt-1 text-sm text-zinc-300">
-            HFT background at Citadel. Understands execution at the microsecond level. MEV is personal.
-          </div>
-        </div>
-      </motion.div>
-
-      {/* Punchline */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.3, duration: 0.4 }}
-        className="text-center font-mono text-sm text-zinc-500"
-      >
-        We've seen this problem from both sides. Now we're solving it.
-      </motion.div>
     </div>
   );
 }
