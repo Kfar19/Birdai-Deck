@@ -15,7 +15,7 @@ const milestones = [
   },
   {
     timeline: "6–12 months",
-    goal: "Production APIs + attribution, "live proof" at scale",
+    goal: "Production APIs + attribution, 'live proof' at scale",
   },
   {
     timeline: "12–18 months",
