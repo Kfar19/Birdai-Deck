@@ -3,10 +3,10 @@
 import { useState } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 
-const nodes = [
+const layers = [
   {
     label: "Validators",
-    sub: "block production",
+    sub: "Block production + on-chain source data",
     details: [
       "Operate native validator infrastructure",
       "See transaction ordering at the source",
@@ -15,7 +15,7 @@ const nodes = [
   },
   {
     label: "Custom Indexers",
-    sub: "state reconstruction",
+    sub: "State reconstruction (who changed what, when, and why)",
     details: [
       "Reconstruct full execution paths",
       "Track every state change per block",
@@ -24,7 +24,7 @@ const nodes = [
   },
   {
     label: "Execution Intelligence",
-    sub: "insight extraction",
+    sub: "Signals + APIs (MEV, slippage, anomalies, market structure)",
     details: [
       "Classify MEV and execution patterns",
       "Attribute value flows to actors",
@@ -46,23 +46,28 @@ export function InfraFlow() {
       className="rounded-2xl border border-white/[0.08] bg-white/[0.02] p-5 shadow-[0_0_80px_-30px_rgba(255,255,255,0.06)] md:p-10"
     >
       {/* Lead-in statement */}
-      <motion.p
+      <motion.div
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ amount: 0.6, once: true }}
         transition={{ duration: 0.5 }}
-        className="mb-8 text-center text-lg leading-relaxed text-zinc-300 md:text-xl"
+        className="mb-8"
       >
-        We run the validators and indexers that power onchain execution. This gives us visibility into market dynamics that no external observer can access.
-      </motion.p>
+        <p className="text-lg leading-relaxed text-zinc-200 md:text-xl">
+          We operate the source infrastructure—validators and custom indexers—that reconstructs market state as it changes.
+        </p>
+        <p className="mt-3 text-base leading-relaxed text-zinc-400 md:text-lg">
+          That gives Birdai first-principles visibility into ordering, fills, and state transitions in real time—not a delayed, abstracted view.
+        </p>
+      </motion.div>
 
-      {/* Nodes */}
+      {/* Layers */}
       <div className="grid gap-4 md:grid-cols-3 md:gap-6">
-        {nodes.map((n, idx) => {
+        {layers.map((layer, idx) => {
           const isExpanded = expanded === idx;
           return (
             <motion.button
-              key={n.label}
+              key={layer.label}
               onClick={() => setExpanded(isExpanded ? null : idx)}
               className={`relative cursor-pointer rounded-xl border text-left transition-colors duration-200 ${
                 isExpanded
@@ -88,8 +93,8 @@ export function InfraFlow() {
                   ▼
                 </motion.span>
               </div>
-              <div className="mt-3 text-xl font-semibold text-white">{n.label}</div>
-              <div className="mt-1 text-sm text-zinc-400">{n.sub}</div>
+              <div className="mt-3 text-xl font-semibold text-white">{layer.label}</div>
+              <div className="mt-1 text-sm text-zinc-400">{layer.sub}</div>
 
               {/* Expanded details */}
               <AnimatePresence>
@@ -101,7 +106,7 @@ export function InfraFlow() {
                     transition={{ duration: 0.25 }}
                     className="mt-4 space-y-2 overflow-hidden border-t border-white/[0.08] pt-4"
                   >
-                    {n.details.map((d, i) => (
+                    {layer.details.map((d, i) => (
                       <motion.li
                         key={i}
                         initial={{ opacity: 0, x: -8 }}
@@ -118,7 +123,7 @@ export function InfraFlow() {
               </AnimatePresence>
 
               {/* Connector arrow (desktop only) */}
-              {!reduce && idx < nodes.length - 1 && (
+              {!reduce && idx < layers.length - 1 && (
                 <motion.div
                   aria-hidden
                   className="absolute -right-4 top-1/2 hidden h-0.5 w-8 origin-left bg-gradient-to-r from-white/20 to-white/5 lg:block"
