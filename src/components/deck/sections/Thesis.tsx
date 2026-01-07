@@ -2,25 +2,25 @@
 
 import { motion } from "framer-motion";
 
-const inputs = [
-  "Orders",
-  "Cancels",
-  "Deposits",
-  "Blocks",
-  "Liquidations",
+const stateUpdates = [
+  "order",
+  "cancel",
+  "deposit",
+  "liquidation",
+  "block",
 ];
 
 const implications = [
-  "Rules are not written — they are executed",
+  "Rules aren't written — they run in production",
   "Edge cases are where PnL lives",
-  "Fairness is a code quality problem",
-  "Implementation speed determines outcomes",
+  "Fairness is a market-structure / code-quality problem",
+  "Speed of implementation changes outcomes",
 ];
 
 export function Thesis() {
   return (
     <div className="flex flex-col items-center text-center">
-      {/* Beat 1: The model */}
+      {/* Beat 1: Markets are state machines */}
       <motion.div
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -29,61 +29,54 @@ export function Thesis() {
         className="max-w-3xl"
       >
         <div className="text-2xl font-semibold leading-snug text-white md:text-3xl">
-          A market is a system that continuously transforms state.
+          Markets are state machines.
         </div>
 
-        {/* Input chips */}
+        {/* State update chips */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ amount: 0.6, once: true }}
           transition={{ delay: 0.2, duration: 0.5 }}
-          className="mt-8 flex flex-wrap items-center justify-center gap-3"
+          className="mt-6 flex flex-wrap items-center justify-center gap-2 md:gap-3"
         >
-          {inputs.map((input, idx) => (
+          <span className="text-zinc-400">Every</span>
+          {stateUpdates.map((item, idx) => (
             <motion.span
-              key={input}
+              key={item}
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 + idx * 0.05, duration: 0.25 }}
-              className="rounded-lg border border-white/[0.08] bg-white/[0.03] px-4 py-2 font-mono text-sm text-zinc-300"
+              className="rounded-lg border border-white/[0.08] bg-white/[0.03] px-3 py-1.5 font-mono text-sm text-zinc-300"
             >
-              {input}
+              {item}
             </motion.span>
           ))}
+          <span className="text-zinc-400">updates reality.</span>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 8 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ amount: 0.6, once: true }}
+          transition={{ delay: 0.35, duration: 0.5 }}
+          className="mt-6 text-xl text-zinc-300 md:text-2xl"
+        >
+          Price just prints the result.
         </motion.div>
       </motion.div>
 
-      {/* Beat 2: The insight */}
-      <motion.div
-        initial={{ opacity: 0, y: 12 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ amount: 0.6, once: true }}
-        transition={{ delay: 0.4, duration: 0.5 }}
-        className="mt-12 max-w-3xl space-y-2"
-      >
-        <div className="text-2xl font-semibold leading-snug text-white md:text-3xl">
-          Price is an output of state transitions.
-        </div>
-        <div className="text-lg text-zinc-400 md:text-xl">
-          Not supply and demand vibes. Computed reality.
-        </div>
-      </motion.div>
-
-      {/* Beat 3: What this means */}
+      {/* Beat 2: Implications */}
       <motion.div
         initial={{ opacity: 0, y: 14 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ amount: 0.4, once: true }}
-        transition={{ delay: 0.55, duration: 0.5 }}
+        transition={{ delay: 0.45, duration: 0.5 }}
         className="mt-12 w-full max-w-xl"
       >
-        <div className="font-mono text-[11px] uppercase tracking-[0.28em] text-zinc-500">
-          What this means
-        </div>
         <motion.div
-          className="mt-5 space-y-3 text-left"
+          className="space-y-3 text-left"
           initial="hidden"
           whileInView="show"
           viewport={{ amount: 0.4, once: true }}
@@ -96,9 +89,9 @@ export function Thesis() {
                 hidden: { opacity: 0, x: -6 },
                 show: { opacity: 1, x: 0 },
               }}
-              className="flex items-center gap-3 text-[15px] text-zinc-300"
+              className="flex items-start gap-3 text-base text-zinc-300 md:text-lg"
             >
-              <span className="text-amber-400">→</span>
+              <span className="mt-0.5 text-amber-400">→</span>
               <span>{imp}</span>
             </motion.div>
           ))}
@@ -110,11 +103,14 @@ export function Thesis() {
         initial={{ opacity: 0, scale: 0.97 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ amount: 0.6, once: true }}
-        transition={{ duration: 0.5, delay: 0.7 }}
-        className="mt-14 rounded-2xl border border-amber-500/30 bg-amber-500/[0.06] px-8 py-6"
+        transition={{ duration: 0.5, delay: 0.6 }}
+        className="mt-14 max-w-2xl rounded-2xl border border-amber-500/30 bg-amber-500/[0.06] px-6 py-5 md:px-8 md:py-6"
       >
-        <div className="text-xl font-semibold text-amber-300 md:text-2xl">
-          If you can see the state, you can see the truth.
+        <div className="text-lg font-semibold text-amber-300 md:text-xl">
+          If you can see state transitions, you can see truth before price.
+        </div>
+        <div className="mt-2 text-base text-amber-200/70 md:text-lg">
+          Birdai reconstructs execution in real time.
         </div>
       </motion.div>
     </div>
