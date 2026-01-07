@@ -39,7 +39,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.05, ease: "easeOut" }}
-          className="font-mono text-[11px] uppercase tracking-[0.28em] text-zinc-300"
+          className="font-mono text-[9px] uppercase tracking-[0.2em] text-zinc-300 sm:text-[11px] sm:tracking-[0.28em]"
         >
           Birdai — Execution Intelligence & Market Infrastructure
         </motion.div>
@@ -98,9 +98,9 @@ export function Hero() {
               animate={{ scale: [1, 1.05, 1], opacity: [0.5, 0, 0.5] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             />
-            <div className="relative inline-flex flex-wrap items-center justify-center gap-2 rounded-xl border border-amber-500/30 bg-gradient-to-b from-amber-500/[0.08] to-amber-500/[0.03] px-5 py-4 font-mono text-xs shadow-[0_0_50px_-15px_rgba(251,191,36,0.25)] md:gap-4 md:px-6 md:py-4 md:text-sm">
-              <span className="text-amber-200/70">Sui executions indexed</span>
-              <span className="text-2xl font-bold tracking-tight text-white md:text-3xl">
+            <div className="relative inline-flex flex-col items-center justify-center gap-1 rounded-xl border border-amber-500/30 bg-gradient-to-b from-amber-500/[0.08] to-amber-500/[0.03] px-4 py-3 font-mono text-xs shadow-[0_0_50px_-15px_rgba(251,191,36,0.25)] sm:flex-row sm:gap-2 md:gap-4 md:px-6 md:py-4 md:text-sm">
+              <span className="text-[10px] text-amber-200/70 sm:text-xs">Sui executions indexed</span>
+              <span className="text-xl font-bold tracking-tight text-white sm:text-2xl md:text-3xl">
                 <LiveCounter
                   start={deck.hero.executionsIndexedStart}
                   perSecond={deck.hero.executionsIndexedPerSecond}

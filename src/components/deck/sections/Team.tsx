@@ -35,20 +35,20 @@ export function Team() {
             transition={{ duration: 0.5, delay: idx * 0.1 }}
             className="rounded-2xl border border-white/[0.08] bg-white/[0.02] p-6 md:p-8"
           >
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3 sm:gap-4">
               {/* Avatar placeholder */}
-              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-amber-500/20 to-amber-500/5 text-2xl font-bold text-amber-400">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-amber-500/20 to-amber-500/5 text-xl font-bold text-amber-400 sm:h-14 sm:w-14 sm:text-2xl">
                 {f.name.charAt(0)}
               </div>
               <div>
-                <div className="text-xl font-semibold text-white">{f.name}</div>
-                <div className="font-mono text-[11px] uppercase tracking-widest text-zinc-400">
+                <div className="text-lg font-semibold text-white sm:text-xl">{f.name}</div>
+                <div className="font-mono text-[10px] uppercase tracking-widest text-zinc-400 sm:text-[11px]">
                   {f.role}
                 </div>
               </div>
             </div>
 
-            <ul className="mt-6 space-y-3">
+            <ul className="mt-4 space-y-2 sm:mt-6 sm:space-y-3">
               {f.bullets.map((b, i) => (
                 <motion.li
                   key={i}
@@ -56,7 +56,7 @@ export function Team() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 + i * 0.08 }}
-                  className="flex items-start gap-3 text-sm text-zinc-300"
+                  className="flex items-start gap-2 text-xs text-zinc-300 sm:gap-3 sm:text-sm"
                 >
                   <span className="mt-0.5 text-amber-400">→</span>
                   <span>{b}</span>

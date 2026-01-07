@@ -18,10 +18,10 @@ export function BlindSpot() {
           transition={{ duration: 0.55 }}
           className="rounded-2xl border border-white/[0.08] bg-white/[0.025] p-6 shadow-[0_0_60px_-20px_rgba(255,255,255,0.06)] md:p-8"
         >
-          <div className="font-mono text-[11px] uppercase tracking-[0.26em] text-zinc-400">
+          <div className="font-mono text-[10px] uppercase tracking-[0.26em] text-zinc-400 sm:text-[11px]">
             What people think happened
           </div>
-          <div className="mt-6 space-y-4 font-mono text-[15px] leading-snug">
+          <div className="mt-4 space-y-3 font-mono text-[13px] leading-snug sm:mt-6 sm:space-y-4 sm:text-[15px]">
             {leftItems.map((it, idx) => (
               <motion.div
                 key={it.label}
@@ -29,7 +29,7 @@ export function BlindSpot() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ amount: 0.7, once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.06 }}
-                className="flex items-center justify-between gap-4 rounded-lg border border-white/[0.04] bg-white/[0.02] px-4 py-3 text-white/80"
+                className="flex items-center justify-between gap-2 rounded-lg border border-white/[0.04] bg-white/[0.02] px-3 py-2 text-white/80 sm:gap-4 sm:px-4 sm:py-3"
               >
                 <div className="flex items-baseline gap-3">
                   <span className="font-medium text-white">{it.label}</span>
@@ -43,7 +43,7 @@ export function BlindSpot() {
               </motion.div>
             ))}
           </div>
-          <div className="mt-6 rounded-xl border border-white/10 bg-black/30 px-5 py-4 text-center text-sm text-zinc-400">
+          <div className="mt-4 rounded-xl border border-white/10 bg-black/30 px-4 py-3 text-center text-xs text-zinc-400 sm:mt-6 sm:px-5 sm:py-4 sm:text-sm">
             Looks clean until you reconstruct execution.
           </div>
         </motion.div>
@@ -56,10 +56,10 @@ export function BlindSpot() {
           transition={{ duration: 0.55, delay: 0.08 }}
           className="relative rounded-2xl border border-amber-500/40 bg-gradient-to-br from-amber-500/[0.04] to-transparent p-6 shadow-[0_0_60px_-20px_rgba(251,191,36,0.1)] md:p-8"
         >
-          <div className="font-mono text-[11px] uppercase tracking-[0.26em] text-amber-400/80">
+          <div className="font-mono text-[10px] uppercase tracking-[0.26em] text-amber-400/80 sm:text-[11px]">
             What actually happened
           </div>
-          <div className="mt-6 space-y-4 font-mono text-[15px] leading-snug">
+          <div className="mt-4 space-y-3 font-mono text-[13px] leading-snug sm:mt-6 sm:space-y-4 sm:text-[15px]">
             {rightItems.map((it, idx) => {
               const isReordered = it.label === "arb capture";
               return (
@@ -69,7 +69,7 @@ export function BlindSpot() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ amount: 0.7, once: true }}
                   transition={{ duration: 0.4, delay: idx * 0.06 }}
-                  className={`flex items-center justify-between gap-4 rounded-lg border px-4 py-3 ${
+                  className={`flex items-center justify-between gap-2 rounded-lg border px-3 py-2 sm:gap-4 sm:px-4 sm:py-3 ${
                     isReordered
                       ? "border-amber-500/40 bg-amber-500/10"
                       : "border-white/[0.04] bg-white/[0.02]"
@@ -83,8 +83,8 @@ export function BlindSpot() {
                     >
                       {it.label}
                       {isReordered && (
-                        <span className="ml-2 text-[10px] uppercase tracking-wider text-amber-400">
-                          ← moved first
+                        <span className="ml-1 text-[9px] uppercase tracking-wider text-amber-400 sm:ml-2 sm:text-[10px]">
+                          ← first
                         </span>
                       )}
                     </span>
@@ -112,7 +112,7 @@ export function BlindSpot() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ amount: 0.7, once: true }}
             transition={{ duration: 0.4, delay: 0.25 }}
-            className="mt-6 rounded-xl border border-amber-500/30 bg-amber-500/10 px-5 py-4 text-center text-sm font-medium text-amber-200"
+            className="mt-4 rounded-xl border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-center text-xs font-medium text-amber-200 sm:mt-6 sm:px-5 sm:py-4 sm:text-sm"
           >
             Same trades. Different ordering. Different outcome.
           </motion.div>

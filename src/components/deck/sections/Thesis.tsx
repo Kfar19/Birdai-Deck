@@ -43,7 +43,7 @@ export function Thesis() {
           transition={{ delay: 0.2, duration: 0.5 }}
           className="mt-6 flex flex-wrap items-center justify-center gap-2 md:gap-3"
         >
-          <span className="text-zinc-400">Every</span>
+          <span className="text-xs text-zinc-400 sm:text-base">Every</span>
           {stateUpdates.map((item, idx) => (
             <motion.span
               key={item}
@@ -51,12 +51,12 @@ export function Thesis() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 + idx * 0.05, duration: 0.25 }}
-              className="rounded-lg border border-white/[0.08] bg-white/[0.03] px-3 py-1.5 font-mono text-sm text-zinc-300"
+              className="rounded-lg border border-white/[0.08] bg-white/[0.03] px-2 py-1 font-mono text-xs text-zinc-300 sm:px-3 sm:py-1.5 sm:text-sm"
             >
               {item}
             </motion.span>
           ))}
-          <span className="text-zinc-400">updates reality.</span>
+          <span className="text-xs text-zinc-400 sm:text-base">updates reality.</span>
         </motion.div>
 
         <motion.div

@@ -47,10 +47,10 @@ export function UseOfFunds() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ amount: 0.6, once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.08 }}
-                className="flex items-center justify-between rounded-xl border border-white/[0.06] bg-black/30 px-5 py-4"
+                className="flex items-center justify-between rounded-xl border border-white/[0.06] bg-black/30 px-4 py-3 sm:px-5 sm:py-4"
               >
-                <span className="text-base font-medium text-white md:text-lg">{f.label}</span>
-                <span className="font-mono text-lg font-semibold text-amber-300 md:text-xl">{f.pct}</span>
+                <span className="text-sm font-medium text-white sm:text-base md:text-lg">{f.label}</span>
+                <span className="font-mono text-base font-semibold text-amber-300 sm:text-lg md:text-xl">{f.pct}</span>
               </motion.div>
             ))}
           </div>
@@ -76,12 +76,12 @@ export function UseOfFunds() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ amount: 0.6, once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.08 }}
-                className="rounded-xl border border-white/[0.06] bg-black/30 px-5 py-4"
+                className="rounded-xl border border-white/[0.06] bg-black/30 px-4 py-3 sm:px-5 sm:py-4"
               >
-                <div className="font-mono text-xs uppercase tracking-widest text-emerald-400/70">
+                <div className="font-mono text-[10px] uppercase tracking-widest text-emerald-400/70 sm:text-xs">
                   {m.timeline}
                 </div>
-                <div className="mt-2 text-base text-zinc-300">{m.goal}</div>
+                <div className="mt-1 text-sm text-zinc-300 sm:mt-2 sm:text-base">{m.goal}</div>
               </motion.div>
             ))}
           </div>

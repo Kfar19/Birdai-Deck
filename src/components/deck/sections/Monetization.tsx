@@ -72,7 +72,7 @@ export function Monetization() {
                   : f.highlight
                   ? "border-white/[0.08] bg-black/30 hover:border-white/[0.15]"
                   : "border-white/[0.04] bg-black/20 hover:border-white/[0.1]"
-              } p-6`}
+              } p-4 sm:p-6`}
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ amount: 0.6, once: true }}
@@ -81,7 +81,7 @@ export function Monetization() {
               whileTap={{ scale: 0.98 }}
             >
               <div className="flex items-center justify-between">
-                <div className={`text-lg font-semibold ${f.highlight ? "text-white" : "text-zinc-400"}`}>
+                <div className={`text-base font-semibold sm:text-lg ${f.highlight ? "text-white" : "text-zinc-400"}`}>
                   {f.title}
                 </div>
                 <motion.span
@@ -92,10 +92,10 @@ export function Monetization() {
                   ▼
                 </motion.span>
               </div>
-              <div className="mt-1 font-mono text-xs uppercase tracking-widest text-zinc-500">
+              <div className="mt-1 font-mono text-[10px] uppercase tracking-widest text-zinc-500 sm:text-xs">
                 {f.sub}
               </div>
-              <div className="mt-3 text-sm text-zinc-400">
+              <div className="mt-2 text-xs text-zinc-400 sm:mt-3 sm:text-sm">
                 {f.customers}
               </div>
 
