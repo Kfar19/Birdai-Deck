@@ -20,37 +20,37 @@ export default function Home() {
       <GridField />
       <DeckNav />
 
-      {/* 1) HERO — section 0 */}
+      {/* 01) HERO — section 0 */}
       <Hero />
 
-      {/* 2) THE CATEGORY PROBLEM — section 1 (moved before thesis) */}
+      {/* 02) THE THESIS — section 1 */}
       <Section
         sectionIndex={1}
-        kicker="02 — THE CATEGORY PROBLEM"
-        title="Programmable markets created a new layer: execution infrastructure."
-      >
-        <CategoryProblem />
-      </Section>
-
-      {/* 3) THE THESIS — section 2 */}
-      <Section
-        sectionIndex={2}
-        kicker="03 — THE THESIS"
+        kicker="02 — THE THESIS"
         title="Price is the output. Execution is the system."
       >
         <Thesis />
       </Section>
 
-      {/* 4) THE PROBLEM — section 3 */}
+      {/* 03) THE PROBLEM — section 2 */}
       <Section
-        sectionIndex={3}
-        kicker="04 — THE PROBLEM"
+        sectionIndex={2}
+        kicker="03 — THE PROBLEM"
         title="Execution is now measurable — but it has no owner."
       >
         <ExecutionGap />
       </Section>
 
-      {/* 5) THE BLIND SPOT — section 4 */}
+      {/* 04) THE CATEGORY PROBLEM — section 3 */}
+      <Section
+        sectionIndex={3}
+        kicker="04 — THE CATEGORY PROBLEM"
+        title="Programmable markets created a new layer: execution infrastructure."
+      >
+        <CategoryProblem />
+      </Section>
+
+      {/* 05) THE BLIND SPOT — section 4 */}
       <Section
         sectionIndex={4}
         kicker="05 — THE BLIND SPOT"
@@ -59,7 +59,7 @@ export default function Home() {
         <BlindSpot />
       </Section>
 
-      {/* 6) BIRDAI INFRA — section 5 */}
+      {/* 06) BIRDAI INFRA — section 5 */}
       <Section
         sectionIndex={5}
         kicker="06 — BIRDAI INFRA"
@@ -68,7 +68,7 @@ export default function Home() {
         <InfraFlow />
       </Section>
 
-      {/* 7) LIVE PROOF — section 6 */}
+      {/* 07) LIVE PROOF — section 6 */}
       <Section
         sectionIndex={6}
         kicker="07 — LIVE PROOF"
@@ -77,7 +77,7 @@ export default function Home() {
         <LiveProof />
       </Section>
 
-      {/* 8) THE REQUIREMENT — section 7 */}
+      {/* 08) THE REQUIREMENT — section 7 */}
       <Section
         sectionIndex={7}
         kicker="08 — THE REQUIREMENT"
@@ -86,7 +86,7 @@ export default function Home() {
         <InfraOwnership />
       </Section>
 
-      {/* 9) THE PATH — section 8 */}
+      {/* 09) THE PATH — section 8 */}
       <Section
         sectionIndex={8}
         kicker="09 — THE PATH"

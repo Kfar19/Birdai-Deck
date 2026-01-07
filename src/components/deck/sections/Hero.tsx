@@ -57,16 +57,21 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.42, ease: "easeOut" }}
-          className="mt-8 inline-flex flex-wrap items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 font-mono text-xs shadow-[0_0_40px_-12px_rgba(255,255,255,0.15)] md:gap-4 md:px-5 md:py-4 md:text-sm"
+          className="mt-8 inline-flex flex-col items-center gap-1"
         >
-          <span className="text-zinc-400">executions indexed</span>
-          <span className="text-lg font-semibold tracking-tight text-white">
-            <LiveCounter
-              start={deck.hero.executionsIndexedStart}
-              perSecond={deck.hero.executionsIndexedPerSecond}
-            />
+          <div className="inline-flex flex-wrap items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 font-mono text-xs shadow-[0_0_40px_-12px_rgba(255,255,255,0.15)] md:gap-4 md:px-5 md:py-4 md:text-sm">
+            <span className="text-zinc-400">executions indexed</span>
+            <span className="text-lg font-semibold tracking-tight text-white">
+              <LiveCounter
+                start={deck.hero.executionsIndexedStart}
+                perSecond={deck.hero.executionsIndexedPerSecond}
+              />
+            </span>
+            <span className="text-zinc-500">(+)</span>
+          </div>
+          <span className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">
+            since launch
           </span>
-          <span className="text-zinc-500">(+)</span>
         </motion.div>
       </div>
     </section>
