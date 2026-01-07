@@ -5,6 +5,7 @@ import { Hero } from "@/components/deck/sections/Hero";
 import { WhyNow } from "@/components/deck/sections/WhyNow";
 import { Thesis } from "@/components/deck/sections/Thesis";
 import { ExecutionGap } from "@/components/deck/sections/ExecutionGap";
+import { ExecutionRent } from "@/components/deck/sections/ExecutionRent";
 import { CategoryProblem } from "@/components/deck/sections/CategoryProblem";
 import { BlindSpot } from "@/components/deck/sections/BlindSpot";
 import { InfraFlow } from "@/components/deck/sections/InfraFlow";
@@ -26,7 +27,7 @@ export default function Home() {
       {/* 01) HERO — section 0 */}
       <Hero />
 
-      {/* 02) WHY NOW — section 1 (moved early for urgency) */}
+      {/* 02) WHY NOW — section 1 */}
       <Section
         sectionIndex={1}
         kicker="02 — WHY NOW"
@@ -53,13 +54,13 @@ export default function Home() {
         <ExecutionGap />
       </Section>
 
-      {/* 05) THE CATEGORY PROBLEM — section 4 */}
+      {/* 05) EXECUTION RENT — section 4 (scaling argument) */}
       <Section
         sectionIndex={4}
-        kicker="05 — THE CATEGORY PROBLEM"
-        title="Programmable markets created a new layer: execution infrastructure."
+        kicker="05 — EXECUTION RENT"
+        title="Execution rent scales with volume"
       >
-        <CategoryProblem />
+        <ExecutionRent />
       </Section>
 
       {/* 06) THE BLIND SPOT — section 5 */}
@@ -98,46 +99,55 @@ export default function Home() {
         <InfraOwnership />
       </Section>
 
-      {/* 10) THE PATH — section 9 */}
+      {/* 10) THE CATEGORY PROBLEM — section 9 */}
       <Section
         sectionIndex={9}
-        kicker="10 — THE PATH"
+        kicker="10 — THE CATEGORY"
+        title="Programmable markets created a new layer: execution infrastructure."
+      >
+        <CategoryProblem />
+      </Section>
+
+      {/* 11) THE PATH — section 10 */}
+      <Section
+        sectionIndex={10}
+        kicker="11 — THE PATH"
         title="Where this goes"
       >
         <ThePath />
       </Section>
 
-      {/* 11) MONETIZATION — section 10 */}
+      {/* 12) MONETIZATION — section 11 */}
       <Section
-        sectionIndex={10}
-        kicker="11 — MONETIZATION"
+        sectionIndex={11}
+        kicker="12 — MONETIZATION"
         title="Structural flows"
       >
         <Monetization />
       </Section>
 
-      {/* 12) THE RAISE — section 11 */}
+      {/* 13) THE RAISE — section 12 */}
       <Raise />
 
-      {/* 13) USE OF FUNDS + MILESTONES — section 12 */}
+      {/* 14) USE OF FUNDS + MILESTONES — section 13 */}
       <Section
-        sectionIndex={12}
-        kicker="13 — USE OF FUNDS + MILESTONES"
+        sectionIndex={13}
+        kicker="14 — USE OF FUNDS + MILESTONES"
         title=""
       >
         <UseOfFunds />
       </Section>
 
-      {/* 14) TEAM — section 13 */}
+      {/* 15) TEAM — section 14 */}
       <Section
-        sectionIndex={13}
-        kicker="14 — TEAM"
+        sectionIndex={14}
+        kicker="15 — TEAM"
         title="Built by operators"
       >
         <Team />
       </Section>
 
-      {/* 15) CLOSE — section 14 */}
+      {/* 16) CLOSE — section 15 */}
       <Close />
     </div>
   );
