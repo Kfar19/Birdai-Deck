@@ -48,8 +48,8 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.32, ease: "easeOut" }}
           className="mx-auto mt-10 max-w-2xl rounded-2xl border border-white/[0.08] bg-white/[0.02] px-6 py-5 md:mt-12 md:px-8 md:py-6"
         >
-          <p className="text-base leading-relaxed text-zinc-200 md:text-lg">
-            Birdai operates validator infrastructure and custom indexers to capture execution-level data that no one else can see. We turn this into intelligence products for traders, protocols, and institutions.
+          <p className="text-lg font-medium leading-relaxed text-zinc-100 md:text-xl">
+            We run execution infrastructure. The intelligence is what comes out.
           </p>
         </motion.div>
 
