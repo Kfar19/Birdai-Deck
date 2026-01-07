@@ -8,7 +8,7 @@ export function Close() {
       {/* Subtle radial glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[500px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-amber-500/[0.06] via-transparent to-transparent blur-3xl"
+        className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[500px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-amber-500/[0.08] via-transparent to-transparent blur-3xl"
       />
 
       {/* Category kicker */}
@@ -34,26 +34,41 @@ export function Close() {
         <span className="text-white/60">execution becomes the product.</span>
       </motion.h2>
 
-      <motion.button
-        type="button"
+      {/* CTA Button */}
+      <motion.a
+        href="mailto:kevin@birdai.com?subject=Birdai%20Walkthrough%20Request"
         initial={{ opacity: 0, scale: 0.96 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ amount: 0.7, once: true }}
         transition={{ delay: 0.3, duration: 0.5 }}
-        className="mt-12 inline-flex items-center justify-center rounded-full border border-amber-400/40 bg-amber-400/10 px-8 py-4 text-base font-semibold text-amber-300 shadow-[0_0_30px_-8px_rgba(251,191,36,0.35)] transition-colors hover:bg-amber-400/20"
+        className="group relative mt-12 inline-flex items-center justify-center overflow-hidden rounded-full border border-amber-400/40 bg-amber-400/10 px-8 py-4 text-base font-semibold text-amber-300 shadow-[0_0_30px_-8px_rgba(251,191,36,0.35)] transition-all duration-300 hover:border-amber-400/60 hover:bg-amber-400/20 hover:shadow-[0_0_40px_-8px_rgba(251,191,36,0.5)]"
       >
-        Schedule a walkthrough
-      </motion.button>
+        {/* Shimmer on hover */}
+        <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/10 to-transparent transition-transform duration-500 group-hover:translate-x-full" />
+        <span className="relative">Schedule a walkthrough</span>
+      </motion.a>
 
       {/* Contact */}
-      <motion.div
+      <motion.a
+        href="mailto:kevin@birdai.com"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ delay: 0.5, duration: 0.4 }}
-        className="mt-6 font-mono text-sm text-zinc-500"
+        className="mt-6 font-mono text-sm text-zinc-500 transition-colors hover:text-zinc-300"
       >
         kevin@birdai.com
+      </motion.a>
+
+      {/* Footer note */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.6, duration: 0.4 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 font-mono text-[10px] uppercase tracking-widest text-zinc-600"
+      >
+        Birdai © 2026
       </motion.div>
     </section>
   );

@@ -52,7 +52,7 @@ export function Monetization() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ amount: 0.6, once: true }}
               transition={{ duration: 0.4, delay: idx * 0.08 }}
-              whileHover={{ scale: 1.02 }}
+              whileHover={{ scale: 1.02, borderColor: "rgba(255,255,255,0.15)" }}
               whileTap={{ scale: 0.98 }}
             >
               <div className="flex items-center justify-between">

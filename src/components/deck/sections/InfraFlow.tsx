@@ -78,7 +78,7 @@ export function InfraFlow() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ amount: 0.6, once: true }}
               transition={{ duration: 0.45, delay: idx * 0.1 }}
-              whileHover={{ scale: 1.02 }}
+              whileHover={{ scale: 1.02, borderColor: "rgba(255,255,255,0.15)" }}
               whileTap={{ scale: 0.98 }}
             >
               <div className="flex items-center justify-between">
