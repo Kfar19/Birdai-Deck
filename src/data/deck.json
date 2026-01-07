@@ -1,0 +1,39 @@
+{
+  "hero": {
+    "executionsIndexedStart": 847129406,
+    "executionsIndexedPerSecond": 142
+  },
+  "blindSpot": {
+    "thought": [
+      { "label": "swap A→B", "t": "t+00", "note": "clean ordering" },
+      { "label": "swap B→C", "t": "t+01", "note": "clean ordering" },
+      { "label": "arb capture", "t": "t+02", "note": "inevitable" }
+    ],
+    "actual": [
+      { "label": "arb capture", "t": "t+00", "note": "precedes price move" },
+      { "label": "swap A→B", "t": "t+01", "note": "executed through new state" },
+      { "label": "swap B→C", "t": "t+02", "note": "settles at worse price" }
+    ]
+  },
+  "proof": {
+    "pool": "Pool 7A / USD stable",
+    "windowSeconds": 7.2,
+    "txCount": 14,
+    "samples": [
+      { "t": 0.0, "beforePrice": 0.8421, "afterPrice": 0.8421, "pnlDelta": 0.0, "event": "state captured" },
+      { "t": 1.2, "beforePrice": 0.8421, "afterPrice": 0.8463, "pnlDelta": 312.4, "event": "latency gap opens" },
+      { "t": 2.4, "beforePrice": 0.8463, "afterPrice": 0.8510, "pnlDelta": 721.9, "event": "reorder opportunity" },
+      { "t": 3.6, "beforePrice": 0.8510, "afterPrice": 0.8539, "pnlDelta": 1248.33, "event": "capture window" },
+      { "t": 4.8, "beforePrice": 0.8539, "afterPrice": 0.8522, "pnlDelta": 1012.18, "event": "pressure normalizes" },
+      { "t": 6.0, "beforePrice": 0.8522, "afterPrice": 0.8506, "pnlDelta": 884.02, "event": "post-state" }
+    ]
+  },
+  "whyNow": [
+    { "label": "On-chain volume", "value": 241000000000, "unit": "$", "perSecond": 4200000, "why": "More value at stake per execution" },
+    { "label": "Tokenized assets", "value": 12480, "unit": "", "perSecond": 0.012, "why": "Traditional finance moving on-chain" },
+    { "label": "Autonomous agents", "value": 18402, "unit": "", "perSecond": 0.038, "why": "Non-human actors increase execution complexity" },
+    { "label": "Settlement velocity", "value": 3.2, "unit": "×", "perSecond": 0.00012, "why": "Faster than 2023 — less time to react" }
+  ]
+}
+
+
