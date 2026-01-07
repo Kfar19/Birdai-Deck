@@ -41,20 +41,23 @@ export function Hero() {
           Execution quality is now market structure.
         </motion.p>
 
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
+        {/* What we do - clear and concrete */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.32, ease: "easeOut" }}
-          className="mx-auto mt-4 font-mono text-base tracking-wide text-amber-300/90 md:text-lg"
+          transition={{ duration: 0.7, delay: 0.32, ease: "easeOut" }}
+          className="mx-auto mt-10 max-w-2xl rounded-2xl border border-white/[0.08] bg-white/[0.02] px-6 py-5 md:mt-12 md:px-8 md:py-6"
         >
-          We don't index markets. We reconstruct them.
-        </motion.p>
+          <p className="text-base leading-relaxed text-zinc-200 md:text-lg">
+            Birdai operates validator infrastructure and custom indexers to capture execution-level data that no one else can see. We turn this into intelligence products for traders, protocols, and institutions.
+          </p>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.36, ease: "easeOut" }}
-          className="mt-10 inline-flex flex-wrap items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 font-mono text-xs shadow-[0_0_40px_-12px_rgba(255,255,255,0.15)] md:mt-12 md:gap-4 md:px-5 md:py-4 md:text-sm"
+          transition={{ duration: 0.6, delay: 0.42, ease: "easeOut" }}
+          className="mt-8 inline-flex flex-wrap items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 font-mono text-xs shadow-[0_0_40px_-12px_rgba(255,255,255,0.15)] md:gap-4 md:px-5 md:py-4 md:text-sm"
         >
           <span className="text-zinc-400">executions indexed</span>
           <span className="text-lg font-semibold tracking-tight text-white">
