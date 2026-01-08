@@ -28,6 +28,25 @@ const beliefs = [
 export function CoreBeliefs() {
   return (
     <div className="flex flex-col gap-10">
+      {/* Header framing */}
+      <motion.div
+        initial={{ opacity: 0, y: 14 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ amount: 0.5, once: true }}
+        transition={{ duration: 0.5 }}
+        className="max-w-2xl"
+      >
+        <p className="text-xl font-medium leading-relaxed text-white sm:text-2xl">
+          If this is how you invest…
+        </p>
+        <p className="mt-3 text-base leading-relaxed text-zinc-400 sm:text-lg">
+          You like companies that define a category before the category has a name.{" "}
+          <span className="text-zinc-300">
+            That's what we're doing with Execution Intelligence & Market Infrastructure.
+          </span>
+        </p>
+      </motion.div>
+
       {/* Beliefs list */}
       <motion.div
         className="space-y-4"
