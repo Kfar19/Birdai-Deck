@@ -53,15 +53,6 @@ export function Hero() {
           Markets Are Becoming Software
         </motion.h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.25, ease: "easeOut" }}
-          className="mx-auto mt-6 max-w-xl text-xl leading-relaxed text-zinc-300 md:text-2xl"
-        >
-          Execution quality is now market structure.
-        </motion.p>
-
         {/* What we do */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
