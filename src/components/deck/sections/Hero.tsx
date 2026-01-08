@@ -39,7 +39,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.05, ease: "easeOut" }}
-          className="flex flex-col items-center gap-1 sm:flex-row sm:gap-3"
+          className="flex flex-col items-center justify-center gap-1 sm:flex-row sm:gap-3"
         >
           <span className="text-base font-semibold tracking-wide text-white sm:text-lg">
             Birdai
