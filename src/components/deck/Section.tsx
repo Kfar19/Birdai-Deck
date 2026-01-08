@@ -29,8 +29,23 @@ export function Section({
             className="flex flex-col gap-4"
           >
             {kicker && (
-              <div className="font-mono text-[11px] uppercase tracking-[0.3em] text-zinc-400">
-                {kicker}
+              <div className="flex items-center gap-3">
+                {/* Parse kicker like "02 — CORE BELIEFS" */}
+                {kicker.includes("—") ? (
+                  <>
+                    <span className="font-mono text-sm font-medium text-zinc-500 sm:text-base">
+                      {kicker.split("—")[0].trim()}
+                    </span>
+                    <span className="text-zinc-600">—</span>
+                    <span className="text-sm font-medium tracking-wide text-zinc-300 sm:text-base">
+                      {kicker.split("—")[1].trim()}
+                    </span>
+                  </>
+                ) : (
+                  <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-zinc-400">
+                    {kicker}
+                  </span>
+                )}
               </div>
             )}
             {title && title.trim().length > 0 && (
