@@ -3,15 +3,15 @@ import { DeckNav } from "@/components/deck/DeckNav";
 import { Section } from "@/components/deck/Section";
 import { Hero } from "@/components/deck/sections/Hero";
 import { CoreBeliefs } from "@/components/deck/sections/CoreBeliefs";
-import { WhyNow } from "@/components/deck/sections/WhyNow";
 import { Thesis } from "@/components/deck/sections/Thesis";
 import { ExecutionGap } from "@/components/deck/sections/ExecutionGap";
 import { ExecutionRent } from "@/components/deck/sections/ExecutionRent";
-import { CategoryProblem } from "@/components/deck/sections/CategoryProblem";
 import { BlindSpot } from "@/components/deck/sections/BlindSpot";
 import { InfraFlow } from "@/components/deck/sections/InfraFlow";
 import { LiveProof } from "@/components/deck/sections/LiveProof";
 import { InfraOwnership } from "@/components/deck/sections/InfraOwnership";
+import { CategoryProblem } from "@/components/deck/sections/CategoryProblem";
+import { WhyNow } from "@/components/deck/sections/WhyNow";
 import { ThePath } from "@/components/deck/sections/ThePath";
 import { Monetization } from "@/components/deck/sections/Monetization";
 import { Raise } from "@/components/deck/sections/Raise";
@@ -37,85 +37,85 @@ export default function Home() {
         <CoreBeliefs />
       </Section>
 
-      {/* 03) WHY NOW — section 2 */}
+      {/* 03) THE THESIS — section 2 */}
       <Section
         sectionIndex={2}
-        kicker="03 — WHY NOW"
-        title="Execution is becoming the new market structure."
-      >
-        <WhyNow />
-      </Section>
-
-      {/* 04) THE THESIS — section 3 */}
-      <Section
-        sectionIndex={3}
-        kicker="04 — THE THESIS"
+        kicker="03 — THE THESIS"
         title="Price is the output. Execution is the system."
       >
         <Thesis />
       </Section>
 
-      {/* 05) THE PROBLEM — section 4 */}
+      {/* 04) THE PROBLEM — section 3 */}
       <Section
-        sectionIndex={4}
-        kicker="05 — THE PROBLEM"
+        sectionIndex={3}
+        kicker="04 — THE PROBLEM"
         title="Execution is now measurable — but it has no owner."
       >
         <ExecutionGap />
       </Section>
 
-      {/* 06) EXECUTION RENT — section 5 (scaling argument) */}
+      {/* 05) EXECUTION RENT — section 4 */}
       <Section
-        sectionIndex={5}
-        kicker="06 — EXECUTION RENT"
+        sectionIndex={4}
+        kicker="05 — EXECUTION RENT"
         title="Execution rent scales with volume"
       >
         <ExecutionRent />
       </Section>
 
-      {/* 07) THE BLIND SPOT — section 6 */}
+      {/* 06) THE BLIND SPOT — section 5 */}
       <Section
-        sectionIndex={6}
-        kicker="07 — THE BLIND SPOT"
+        sectionIndex={5}
+        kicker="06 — THE BLIND SPOT"
         title="What we see that others miss"
       >
         <BlindSpot />
       </Section>
 
-      {/* 08) BIRDAI INFRA — section 7 */}
+      {/* 07) BIRDAI INFRA — section 6 */}
       <Section
-        sectionIndex={7}
-        kicker="08 — BIRDAI INFRA"
+        sectionIndex={6}
+        kicker="07 — BIRDAI INFRA"
         title="Validators → Indexers → Execution Intelligence"
       >
         <InfraFlow />
       </Section>
 
-      {/* 09) LIVE PROOF — section 8 */}
+      {/* 08) LIVE PROOF — section 7 */}
       <Section
-        sectionIndex={8}
-        kicker="09 — LIVE PROOF"
+        sectionIndex={7}
+        kicker="08 — LIVE PROOF"
         title="Execution intelligence in action"
       >
         <LiveProof />
       </Section>
 
-      {/* 10) THE REQUIREMENT — section 9 */}
+      {/* 09) THE REQUIREMENT — section 8 */}
       <Section
-        sectionIndex={9}
-        kicker="10 — THE REQUIREMENT"
+        sectionIndex={8}
+        kicker="09 — THE REQUIREMENT"
         title="Execution intelligence is only possible if you operate the infrastructure."
       >
         <InfraOwnership />
       </Section>
 
-      {/* 11) THE CATEGORY — section 10 */}
+      {/* 10) THE CATEGORY — section 9 */}
       <Section
-        sectionIndex={10}
-        kicker="11 — THE CATEGORY"
+        sectionIndex={9}
+        kicker="10 — THE CATEGORY"
         title="Programmable markets created a new layer: execution infrastructure."
       >
         <CategoryProblem />
+      </Section>
+
+      {/* 11) WHY NOW — section 10 */}
+      <Section
+        sectionIndex={10}
+        kicker="11 — WHY NOW"
+        title="Execution is becoming the new market structure."
+      >
+        <WhyNow />
       </Section>
 
       {/* 12) THE PATH — section 11 */}
