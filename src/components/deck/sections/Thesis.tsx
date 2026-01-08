@@ -19,7 +19,7 @@ const implications = [
 
 export function Thesis() {
   return (
-    <div className="flex flex-col items-center text-center">
+    <div className="space-y-10">
       {/* Beat 1: Markets are state machines */}
       <motion.div
         initial={{ opacity: 0, y: 16 }}
@@ -34,52 +34,52 @@ export function Thesis() {
         <div className="mt-3 text-base text-zinc-400 md:text-lg">
           Execution = ordering + timing + liquidations + state updates.
         </div>
-
-        {/* State update chips */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ amount: 0.6, once: true }}
-          transition={{ delay: 0.2, duration: 0.5 }}
-          className="mt-6 flex flex-wrap items-center justify-center gap-2 md:gap-3"
-        >
-          <span className="text-xs text-zinc-400 sm:text-base">Every</span>
-          {stateUpdates.map((item, idx) => (
-            <motion.span
-              key={item}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 + idx * 0.05, duration: 0.25 }}
-              className="rounded-lg border border-white/[0.08] bg-white/[0.03] px-2 py-1 font-mono text-xs text-zinc-300 sm:px-3 sm:py-1.5 sm:text-sm"
-            >
-              {item}
-            </motion.span>
-          ))}
-          <span className="text-xs text-zinc-400 sm:text-base">updates reality.</span>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ amount: 0.6, once: true }}
-          transition={{ delay: 0.35, duration: 0.5 }}
-          className="mt-6 text-xl text-zinc-300 md:text-2xl"
-        >
-          Price just prints the result.
-        </motion.div>
       </motion.div>
 
-      {/* Beat 2: Implications */}
+      {/* State update chips */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ amount: 0.6, once: true }}
+        transition={{ delay: 0.2, duration: 0.5 }}
+        className="flex flex-wrap items-center gap-2 md:gap-3"
+      >
+        <span className="text-sm text-zinc-400 sm:text-base">Every</span>
+        {stateUpdates.map((item, idx) => (
+          <motion.span
+            key={item}
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 + idx * 0.05, duration: 0.25 }}
+            className="rounded-lg border border-white/[0.08] bg-white/[0.03] px-2 py-1 font-mono text-xs text-zinc-300 sm:px-3 sm:py-1.5 sm:text-sm"
+          >
+            {item}
+          </motion.span>
+        ))}
+        <span className="text-sm text-zinc-400 sm:text-base">updates reality.</span>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 8 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ amount: 0.6, once: true }}
+        transition={{ delay: 0.35, duration: 0.5 }}
+        className="max-w-3xl text-xl text-zinc-300 md:text-2xl"
+      >
+        Price just prints the result.
+      </motion.div>
+
+      {/* Implications */}
       <motion.div
         initial={{ opacity: 0, y: 14 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ amount: 0.4, once: true }}
         transition={{ delay: 0.45, duration: 0.5 }}
-        className="mt-12 w-full max-w-xl"
+        className="w-full max-w-xl"
       >
         <motion.div
-          className="space-y-3 text-left"
+          className="space-y-3"
           initial="hidden"
           whileInView="show"
           viewport={{ amount: 0.4, once: true }}
@@ -107,7 +107,7 @@ export function Thesis() {
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ amount: 0.6, once: true }}
         transition={{ duration: 0.5, delay: 0.6 }}
-        className="mt-14 max-w-2xl rounded-2xl border border-amber-500/30 bg-amber-500/[0.06] px-6 py-5 md:px-8 md:py-6"
+        className="max-w-2xl rounded-2xl border border-amber-500/30 bg-amber-500/[0.06] px-6 py-5 md:px-8 md:py-6"
       >
         <div className="text-lg font-semibold text-amber-300 md:text-xl">
           If you can see state transitions, you can see truth before price.

@@ -11,7 +11,7 @@ const consequences = [
 
 export function ExecutionGap() {
   return (
-    <div className="flex flex-col items-center text-center">
+    <div className="space-y-10">
       {/* Beat 1: The path */}
       <motion.div
         initial={{ opacity: 0, y: 16 }}
@@ -23,7 +23,7 @@ export function ExecutionGap() {
         <div className="text-xl leading-relaxed text-zinc-300 md:text-2xl">
           Every trade has a path: ordering, timing, fills, liquidations.
         </div>
-        <div className="mt-3 text-xl leading-relaxed text-zinc-400 md:text-2xl">
+        <div className="mt-3 text-lg leading-relaxed text-zinc-400 md:text-xl">
           Most systems abstract the path away and show only price.
         </div>
       </motion.div>
@@ -34,14 +34,14 @@ export function ExecutionGap() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ amount: 0.5, once: true }}
         transition={{ delay: 0.25, duration: 0.5 }}
-        className="mt-12 w-full max-w-xl"
+        className="w-full max-w-xl"
       >
         <div className="text-xl font-semibold text-white md:text-2xl">
           Execution quality determines outcomes
         </div>
         
         <motion.div
-          className="mt-6 space-y-3 text-left"
+          className="mt-6 space-y-3"
           initial="hidden"
           whileInView="show"
           viewport={{ amount: 0.4, once: true }}
@@ -69,7 +69,7 @@ export function ExecutionGap() {
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ amount: 0.6, once: true }}
         transition={{ duration: 0.5, delay: 0.45 }}
-        className="mt-14 max-w-2xl rounded-2xl border border-amber-500/30 bg-amber-500/[0.06] px-6 py-5 md:px-8 md:py-6"
+        className="max-w-2xl rounded-2xl border border-amber-500/30 bg-amber-500/[0.06] px-6 py-5 md:px-8 md:py-6"
       >
         <div className="text-lg text-zinc-300 md:text-xl">
           The data exists. The truth is fragmented.
