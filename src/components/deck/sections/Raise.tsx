@@ -38,7 +38,7 @@ export function Raise() {
           className="absolute inset-0 -z-10 scale-150 rounded-full bg-gradient-to-r from-transparent via-amber-500/20 to-transparent blur-2xl"
         />
         <div className="text-[clamp(3rem,8vw,6rem)] font-bold tracking-tight text-white">
-          $4M
+          $3M
         </div>
         <div className="mt-1 font-mono text-lg uppercase tracking-widest text-amber-300 md:text-xl">
           Pre-Seed
