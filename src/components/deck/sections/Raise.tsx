@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export function Raise() {
   return (
-    <section className="deck-section relative flex min-h-screen flex-col items-center justify-center px-4 text-center sm:px-8" data-section={12}>
+    <section className="deck-section relative flex min-h-screen flex-col items-center justify-center px-4 text-center sm:px-8" data-section={13}>
       {/* Subtle radial glow */}
       <div
         aria-hidden
@@ -19,7 +19,7 @@ export function Raise() {
         transition={{ duration: 0.5 }}
         className="mb-6 font-mono text-[11px] uppercase tracking-[0.3em] text-zinc-400"
       >
-        13 — THE RAISE
+        14 — THE RAISE
       </motion.div>
 
       {/* Amount with visual emphasis */}

@@ -2,6 +2,7 @@ import { GridField } from "@/components/deck/GridField";
 import { DeckNav } from "@/components/deck/DeckNav";
 import { Section } from "@/components/deck/Section";
 import { Hero } from "@/components/deck/sections/Hero";
+import { CoreBeliefs } from "@/components/deck/sections/CoreBeliefs";
 import { WhyNow } from "@/components/deck/sections/WhyNow";
 import { Thesis } from "@/components/deck/sections/Thesis";
 import { ExecutionGap } from "@/components/deck/sections/ExecutionGap";
@@ -27,127 +28,136 @@ export default function Home() {
       {/* 01) HERO — section 0 */}
       <Hero />
 
-      {/* 02) WHY NOW — section 1 */}
+      {/* 02) CORE BELIEFS — section 1 */}
       <Section
         sectionIndex={1}
-        kicker="02 — WHY NOW"
+        kicker="02 — CORE BELIEFS"
+        title=""
+      >
+        <CoreBeliefs />
+      </Section>
+
+      {/* 03) WHY NOW — section 2 */}
+      <Section
+        sectionIndex={2}
+        kicker="03 — WHY NOW"
         title="Execution is becoming the new market structure."
       >
         <WhyNow />
       </Section>
 
-      {/* 03) THE THESIS — section 2 */}
+      {/* 04) THE THESIS — section 3 */}
       <Section
-        sectionIndex={2}
-        kicker="03 — THE THESIS"
+        sectionIndex={3}
+        kicker="04 — THE THESIS"
         title="Price is the output. Execution is the system."
       >
         <Thesis />
       </Section>
 
-      {/* 04) THE PROBLEM — section 3 */}
+      {/* 05) THE PROBLEM — section 4 */}
       <Section
-        sectionIndex={3}
-        kicker="04 — THE PROBLEM"
+        sectionIndex={4}
+        kicker="05 — THE PROBLEM"
         title="Execution is now measurable — but it has no owner."
       >
         <ExecutionGap />
       </Section>
 
-      {/* 05) EXECUTION RENT — section 4 (scaling argument) */}
+      {/* 06) EXECUTION RENT — section 5 (scaling argument) */}
       <Section
-        sectionIndex={4}
-        kicker="05 — EXECUTION RENT"
+        sectionIndex={5}
+        kicker="06 — EXECUTION RENT"
         title="Execution rent scales with volume"
       >
         <ExecutionRent />
       </Section>
 
-      {/* 06) THE BLIND SPOT — section 5 */}
+      {/* 07) THE BLIND SPOT — section 6 */}
       <Section
-        sectionIndex={5}
-        kicker="06 — THE BLIND SPOT"
+        sectionIndex={6}
+        kicker="07 — THE BLIND SPOT"
         title="What we see that others miss"
       >
         <BlindSpot />
       </Section>
 
-      {/* 07) BIRDAI INFRA — section 6 */}
+      {/* 08) BIRDAI INFRA — section 7 */}
       <Section
-        sectionIndex={6}
-        kicker="07 — BIRDAI INFRA"
+        sectionIndex={7}
+        kicker="08 — BIRDAI INFRA"
         title="Validators → Indexers → Execution Intelligence"
       >
         <InfraFlow />
       </Section>
 
-      {/* 08) LIVE PROOF — section 7 */}
+      {/* 09) LIVE PROOF — section 8 */}
       <Section
-        sectionIndex={7}
-        kicker="08 — LIVE PROOF"
+        sectionIndex={8}
+        kicker="09 — LIVE PROOF"
         title="Execution intelligence in action"
       >
         <LiveProof />
       </Section>
 
-      {/* 09) THE REQUIREMENT — section 8 */}
+      {/* 10) THE REQUIREMENT — section 9 */}
       <Section
-        sectionIndex={8}
-        kicker="09 — THE REQUIREMENT"
+        sectionIndex={9}
+        kicker="10 — THE REQUIREMENT"
         title="Execution intelligence is only possible if you operate the infrastructure."
       >
         <InfraOwnership />
       </Section>
 
-      {/* 10) THE CATEGORY PROBLEM — section 9 */}
+      {/* 11) THE CATEGORY — section 10 */}
       <Section
-        sectionIndex={9}
-        kicker="10 — THE CATEGORY"
+        sectionIndex={10}
+        kicker="11 — THE CATEGORY"
         title="Programmable markets created a new layer: execution infrastructure."
       >
         <CategoryProblem />
       </Section>
 
-      {/* 11) THE PATH — section 10 */}
+      {/* 12) THE PATH — section 11 */}
       <Section
-        sectionIndex={10}
-        kicker="11 — THE PATH"
+        sectionIndex={11}
+        kicker="12 — THE PATH"
         title="Where this goes"
       >
         <ThePath />
       </Section>
 
-      {/* 12) MONETIZATION — section 11 */}
+      {/* 13) MONETIZATION — section 12 */}
       <Section
-        sectionIndex={11}
-        kicker="12 — MONETIZATION"
+        sectionIndex={12}
+        kicker="13 — MONETIZATION"
         title="Structural flows"
       >
         <Monetization />
       </Section>
 
-      {/* 13) THE RAISE — section 12 */}
+      {/* 14) THE RAISE — section 13 */}
       <Raise />
 
-      {/* 14) USE OF FUNDS + MILESTONES — section 13 */}
+      {/* 15) USE OF FUNDS + MILESTONES — section 14 */}
       <Section
-        sectionIndex={13}
-        kicker="14 — USE OF FUNDS + MILESTONES"
+        sectionIndex={14}
+        kicker="15 — USE OF FUNDS + MILESTONES"
         title=""
       >
         <UseOfFunds />
       </Section>
 
-      {/* 15) TEAM — section 14 */}
+      {/* 16) TEAM — section 15 */}
       <Section
-        sectionIndex={14}
-        kicker="15 — TEAM"
+        sectionIndex={15}
+        kicker="16 — TEAM"
         title="Built by operators"
       >
         <Team />
       </Section>
 
-      {/* 16) CLOSE — section 15 */}
+      {/* 17) CLOSE — section 16 */}
       <Close />
     </div>
   );
