@@ -138,9 +138,12 @@ export function Monetization() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ delay: 0.4 }}
-        className="mt-6 text-center font-mono text-[11px] uppercase tracking-[0.2em] text-zinc-500"
+        className="mt-6 flex items-center justify-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-500 md:text-[11px]"
       >
-        Tap to see how money flows
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-zinc-600">
+          <path d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
+        </svg>
+        <span>Tap cards to expand</span>
       </motion.div>
 
       {!reduce && (

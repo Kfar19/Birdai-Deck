@@ -121,8 +121,11 @@ export function LiveProof() {
         {/* Right interactive */}
         <div className="rounded-2xl border border-white/[0.06] bg-black/30 p-4 md:p-8 lg:col-span-3">
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-            <div className="font-mono text-[11px] uppercase tracking-[0.28em] text-zinc-400">
-              Scrub execution window
+            <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.28em] text-zinc-400">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-zinc-500">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+              <span>Drag to scrub execution window</span>
             </div>
             <div className="font-mono text-xl font-medium text-white">
               t = {s.t.toFixed(1)}s
