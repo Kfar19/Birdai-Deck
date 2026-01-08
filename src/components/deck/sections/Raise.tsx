@@ -17,9 +17,11 @@ export function Raise() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ amount: 0.6, once: true }}
         transition={{ duration: 0.5 }}
-        className="mb-6 font-mono text-[11px] uppercase tracking-[0.3em] text-zinc-400"
+        className="mb-6 flex items-center gap-3"
       >
-        14 — THE RAISE
+        <span className="font-mono text-sm font-medium text-zinc-500 sm:text-base">14</span>
+        <span className="text-zinc-600">—</span>
+        <span className="text-sm font-medium tracking-wide text-zinc-300 sm:text-base">THE RAISE</span>
       </motion.div>
 
       {/* Amount with visual emphasis */}
@@ -39,37 +41,25 @@ export function Raise() {
           $4M
         </div>
         <div className="mt-1 font-mono text-lg uppercase tracking-widest text-amber-300 md:text-xl">
-          Seed Round
+          Pre-Seed
         </div>
       </motion.div>
 
-      {/* Progress bar visual */}
+      {/* Round status */}
       <motion.div
         initial={{ opacity: 0, y: 12 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ amount: 0.6, once: true }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="mt-10 w-full max-w-md"
+        className="mt-8 inline-flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-500/[0.08] px-5 py-2"
       >
-        <div className="relative h-3 overflow-hidden rounded-full bg-white/[0.08]">
-          <motion.div
-            className="absolute inset-y-0 left-0 rounded-full bg-gradient-to-r from-amber-500 to-amber-400"
-            initial={{ width: 0 }}
-            whileInView={{ width: "15%" }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
-          />
-          {/* Shimmer effect */}
-          <motion.div
-            className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-            animate={{ x: [-80, 400] }}
-            transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
-          />
-        </div>
-        <div className="mt-2 flex justify-between font-mono text-xs text-zinc-500">
-          <span>Raising</span>
-          <span className="text-amber-400/70">Target: $4M</span>
-        </div>
+        <span className="relative flex h-2 w-2">
+          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-400 opacity-75" />
+          <span className="relative inline-flex h-2 w-2 rounded-full bg-amber-400" />
+        </span>
+        <span className="font-mono text-xs uppercase tracking-widest text-amber-300">
+          Opening round
+        </span>
       </motion.div>
 
       {/* Subtitle */}

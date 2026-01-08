@@ -3,10 +3,11 @@
 import { motion } from "framer-motion";
 
 const steps = [
-  { label: "Validators", sub: "operate native infrastructure", status: "done" },
-  { label: "Custom Indexers", sub: "reconstruct execution reality", status: "done" },
-  { label: "Execution Observatory", sub: "measure execution quality at scale", status: "in-progress" },
-  { label: "Best Execution Layer", sub: "transparent, competitive, fair", status: "future" },
+  { label: "Validators", sub: "Live — operating native Sui infrastructure", status: "done" },
+  { label: "Custom Indexers", sub: "Live — 847M+ executions processed", status: "done" },
+  { label: "MEV Observatory", sub: "Next 3 months — public launch", status: "in-progress" },
+  { label: "Execution APIs", sub: "6 months — wallets, protocols, funds", status: "future" },
+  { label: "Best Execution", sub: "12+ months — auctions, routing", status: "future" },
 ];
 
 export function ThePath() {
@@ -21,10 +22,10 @@ export function ThePath() {
         className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-8"
       >
         <div className="font-mono text-[11px] uppercase tracking-[0.28em] text-zinc-400">
-          Build order
+          What's live / What's next
         </div>
 
-        <div className="mt-8 grid gap-4 md:grid-cols-4">
+        <div className="mt-8 grid gap-4 md:grid-cols-5">
           {steps.map((s, idx) => (
             <motion.div
               key={s.label}

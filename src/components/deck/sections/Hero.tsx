@@ -102,8 +102,8 @@ export function Hero() {
               </motion.span>
             </div>
           </div>
-          <span className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">
-            last 30 days
+          <span className="font-mono text-[10px] tracking-wide text-zinc-500">
+            Our infra is live — processing the full Sui network
           </span>
         </motion.div>
       </div>
