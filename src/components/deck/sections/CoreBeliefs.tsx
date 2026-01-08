@@ -5,32 +5,22 @@ import { motion } from "framer-motion";
 const beliefs = [
   {
     text: "Legacy finance will keep moving on-chain",
-    sub: "Tokenized assets + real settlement, not just wrappers",
+    sub: "Real settlement + tokenized assets",
     key: true,
   },
   {
-    text: "Economic activity concentrates on a few top chains",
-    sub: "Sui becomes one of them",
+    text: "Activity concentrates on a few winning chains",
+    sub: "Sui is one of them",
     key: true,
   },
   {
-    text: "Markets are becoming software",
-    sub: "The code path is the rulebook",
+    text: "On-chain market structure is execution",
+    sub: "Ordering + state transitions determine outcomes",
     key: false,
   },
   {
     text: "MEV is market structure expressed as profit",
-    sub: "Ordering + state transitions create P&L",
-    key: false,
-  },
-  {
-    text: "Execution truth is only visible if you operate the infrastructure",
-    sub: "Validators + custom indexers",
-    key: false,
-  },
-  {
-    text: "The winner becomes the system of record for execution",
-    sub: "Monetizes via intelligence APIs → evolves into best execution / auctions",
+    sub: "Measurable, attributable, and monetizable",
     key: false,
   },
 ];
@@ -38,19 +28,6 @@ const beliefs = [
 export function CoreBeliefs() {
   return (
     <div className="flex flex-col gap-10">
-      {/* Lead-in */}
-      <motion.div
-        initial={{ opacity: 0, y: 14 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ amount: 0.5, once: true }}
-        transition={{ duration: 0.5 }}
-        className="max-w-2xl"
-      >
-        <p className="text-lg text-zinc-300 md:text-xl">
-          Birdai is built on a small set of beliefs:
-        </p>
-      </motion.div>
-
       {/* Beliefs list */}
       <motion.div
         className="space-y-4"
@@ -89,12 +66,25 @@ export function CoreBeliefs() {
         ))}
       </motion.div>
 
+      {/* Therefore conclusion */}
+      <motion.div
+        initial={{ opacity: 0, y: 12 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ amount: 0.6, once: true }}
+        transition={{ delay: 0.35, duration: 0.5 }}
+        className="max-w-2xl rounded-xl border border-emerald-500/20 bg-emerald-500/[0.04] px-5 py-5 sm:px-6"
+      >
+        <p className="text-base leading-relaxed text-zinc-300 sm:text-lg">
+          <span className="font-medium text-emerald-400">Therefore:</span> the company that reconstructs execution becomes the system of record → sells execution intelligence → evolves into best execution / auctions.
+        </p>
+      </motion.div>
+
       {/* Filter callout */}
       <motion.div
         initial={{ opacity: 0, y: 12 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ amount: 0.6, once: true }}
-        transition={{ delay: 0.4, duration: 0.5 }}
+        transition={{ delay: 0.45, duration: 0.5 }}
         className="max-w-xl rounded-xl border border-zinc-700/50 bg-zinc-900/50 px-5 py-4 sm:px-6"
       >
         <p className="text-sm text-zinc-400 sm:text-base">
@@ -104,4 +94,3 @@ export function CoreBeliefs() {
     </div>
   );
 }
-
