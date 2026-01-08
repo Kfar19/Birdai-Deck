@@ -39,9 +39,15 @@ export function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.05, ease: "easeOut" }}
-          className="font-mono text-[9px] uppercase tracking-[0.2em] text-zinc-300 sm:text-[11px] sm:tracking-[0.28em]"
+          className="flex flex-col items-center gap-1 sm:flex-row sm:gap-3"
         >
-          Birdai — Execution Intelligence & Market Infrastructure
+          <span className="text-base font-semibold tracking-wide text-white sm:text-lg">
+            Birdai
+          </span>
+          <span className="hidden text-zinc-500 sm:inline">—</span>
+          <span className="font-mono text-[10px] uppercase tracking-[0.15em] text-zinc-400 sm:text-xs sm:tracking-[0.2em]">
+            Execution Intelligence & Market Infrastructure
+          </span>
         </motion.div>
 
         <motion.h1
