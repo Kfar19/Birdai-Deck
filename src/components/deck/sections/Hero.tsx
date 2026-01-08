@@ -62,26 +62,16 @@ export function Hero() {
           Execution quality is now market structure.
         </motion.p>
 
-        {/* What we do - with glow effect */}
+        {/* What we do */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.35, ease: "easeOut" }}
-          className="relative mx-auto mt-10 max-w-2xl md:mt-12"
+          className="mx-auto mt-8 max-w-2xl md:mt-10"
         >
-          {/* Glow behind box */}
-          <div
-            aria-hidden
-            className="absolute inset-0 -z-10 rounded-2xl bg-gradient-to-r from-amber-500/10 via-amber-500/5 to-amber-500/10 blur-xl"
-          />
-          <div className="rounded-2xl border border-amber-500/20 bg-gradient-to-b from-white/[0.04] to-white/[0.02] px-6 py-5 shadow-[0_0_60px_-20px_rgba(251,191,36,0.15)] md:px-8 md:py-6">
-            <p className="text-lg font-medium leading-relaxed text-zinc-100 md:text-xl">
-              We run execution infrastructure. The intelligence is what comes out.
-            </p>
-            <p className="mt-3 text-sm leading-relaxed text-zinc-400 md:text-base">
-              We operate validators + custom indexers to reconstruct execution in real time.
-            </p>
-          </div>
+          <p className="text-lg font-medium leading-relaxed text-zinc-200 md:text-xl">
+            We run execution infrastructure. The intelligence is what comes out.
+          </p>
         </motion.div>
 
         {/* Counter with pulse effect */}
