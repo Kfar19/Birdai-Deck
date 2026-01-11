@@ -38,20 +38,21 @@ export function Team() {
             transition={{ duration: 0.5, delay: idx * 0.1 }}
             className="rounded-2xl border border-white/[0.08] bg-white/[0.02] p-6 md:p-8"
           >
-            <div className="flex items-center gap-3 sm:gap-4">
-              {/* Headshot */}
-              <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-full border-2 border-amber-500/30 shadow-[0_0_20px_-6px_rgba(251,191,36,0.3)] sm:h-20 sm:w-20">
+            <div className="flex flex-col items-center gap-4 sm:flex-row sm:items-start sm:gap-5">
+              {/* Headshot - larger and more prominent */}
+              <div className="relative h-28 w-28 shrink-0 overflow-hidden rounded-full border-[3px] border-amber-500/40 shadow-[0_0_30px_-4px_rgba(251,191,36,0.4)] sm:h-32 sm:w-32">
                 <Image
                   src={f.image}
                   alt={f.name}
                   fill
-                  className="object-cover object-center"
-                  sizes="80px"
+                  className="object-cover object-top"
+                  sizes="128px"
+                  priority
                 />
               </div>
-              <div>
-                <div className="text-lg font-semibold text-white sm:text-xl">{f.name}</div>
-                <div className="font-mono text-[10px] uppercase tracking-widest text-amber-400 sm:text-[11px]">
+              <div className="text-center sm:text-left">
+                <div className="text-xl font-semibold text-white sm:text-2xl">{f.name}</div>
+                <div className="mt-1 font-mono text-xs uppercase tracking-widest text-amber-400 sm:text-sm">
                   {f.role}
                 </div>
               </div>
