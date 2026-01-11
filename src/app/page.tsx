@@ -123,7 +123,7 @@ export default function Home() {
       <Section
         sectionIndex={11}
         kicker="12 — WHY PRIVACY IS BULLISH"
-        title="Why Privacy Is Bullish for Birdai"
+        title="Why Privacy Makes Execution the Scarce Signal"
       >
         <PrivacyBullish />
       </Section>
