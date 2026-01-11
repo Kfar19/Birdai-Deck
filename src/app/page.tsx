@@ -12,6 +12,7 @@ import { LiveProof } from "@/components/deck/sections/LiveProof";
 import { InfraOwnership } from "@/components/deck/sections/InfraOwnership";
 import { CategoryProblem } from "@/components/deck/sections/CategoryProblem";
 import { WhyNow } from "@/components/deck/sections/WhyNow";
+import { PrivacyBullish } from "@/components/deck/sections/PrivacyBullish";
 import { ThePath } from "@/components/deck/sections/ThePath";
 import { Monetization } from "@/components/deck/sections/Monetization";
 import { Raise } from "@/components/deck/sections/Raise";
@@ -118,46 +119,55 @@ export default function Home() {
         <WhyNow />
       </Section>
 
-      {/* 12) THE PATH — section 11 */}
+      {/* 12) WHY PRIVACY IS BULLISH — section 11 */}
       <Section
         sectionIndex={11}
-        kicker="12 — THE PATH"
+        kicker="12 — WHY PRIVACY IS BULLISH"
+        title="Why Privacy Is Bullish for Birdai"
+      >
+        <PrivacyBullish />
+      </Section>
+
+      {/* 13) THE PATH — section 12 */}
+      <Section
+        sectionIndex={12}
+        kicker="13 — THE PATH"
         title="Where this goes"
       >
         <ThePath />
       </Section>
 
-      {/* 13) MONETIZATION — section 12 */}
+      {/* 14) MONETIZATION — section 13 */}
       <Section
-        sectionIndex={12}
-        kicker="13 — MONETIZATION"
+        sectionIndex={13}
+        kicker="14 — MONETIZATION"
         title="Structural flows"
       >
         <Monetization />
       </Section>
 
-      {/* 14) THE RAISE — section 13 */}
+      {/* 15) THE RAISE — section 14 */}
       <Raise />
 
-      {/* 15) USE OF FUNDS + MILESTONES — section 14 */}
+      {/* 16) USE OF FUNDS + MILESTONES — section 15 */}
       <Section
-        sectionIndex={14}
-        kicker="15 — USE OF FUNDS + MILESTONES"
+        sectionIndex={15}
+        kicker="16 — USE OF FUNDS + MILESTONES"
         title=""
       >
         <UseOfFunds />
       </Section>
 
-      {/* 16) TEAM — section 15 */}
+      {/* 17) TEAM — section 16 */}
       <Section
-        sectionIndex={15}
-        kicker="16 — TEAM"
+        sectionIndex={16}
+        kicker="17 — TEAM"
         title="Built by operators"
       >
         <Team />
       </Section>
 
-      {/* 17) CLOSE — section 16 */}
+      {/* 18) CLOSE — section 17 */}
       <Close />
     </div>
   );
