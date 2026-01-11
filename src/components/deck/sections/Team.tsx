@@ -1,19 +1,22 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const founders = [
   {
     name: "Kevin Farrelly",
     role: "CEO",
+    image: "/kevin.jpg",
     bullets: [
       "Sold last company to Franklin Templeton",
       "Built early-stage venture arm for Franklin Templeton",
     ],
   },
   {
-    name: "Greg",
+    name: "Greg Scanlon",
     role: "CTO",
+    image: "/greg.jpg",
     bullets: [
       "Built trading systems at Citadel",
       "Deep expertise in low-latency infrastructure",
@@ -36,13 +39,19 @@ export function Team() {
             className="rounded-2xl border border-white/[0.08] bg-white/[0.02] p-6 md:p-8"
           >
             <div className="flex items-center gap-3 sm:gap-4">
-              {/* Avatar placeholder */}
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-amber-500/20 to-amber-500/5 text-xl font-bold text-amber-400 sm:h-14 sm:w-14 sm:text-2xl">
-                {f.name.charAt(0)}
+              {/* Headshot */}
+              <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-full border-2 border-amber-500/30 shadow-[0_0_20px_-6px_rgba(251,191,36,0.3)] sm:h-20 sm:w-20">
+                <Image
+                  src={f.image}
+                  alt={f.name}
+                  fill
+                  className="object-cover object-center"
+                  sizes="80px"
+                />
               </div>
               <div>
                 <div className="text-lg font-semibold text-white sm:text-xl">{f.name}</div>
-                <div className="font-mono text-[10px] uppercase tracking-widest text-zinc-400 sm:text-[11px]">
+                <div className="font-mono text-[10px] uppercase tracking-widest text-amber-400 sm:text-[11px]">
                   {f.role}
                 </div>
               </div>
@@ -82,4 +91,3 @@ export function Team() {
     </div>
   );
 }
-
