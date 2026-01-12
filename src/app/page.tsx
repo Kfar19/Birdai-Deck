@@ -13,6 +13,7 @@ import { InfraOwnership } from "@/components/deck/sections/InfraOwnership";
 import { CategoryProblem } from "@/components/deck/sections/CategoryProblem";
 import { WhyNow } from "@/components/deck/sections/WhyNow";
 import { PrivacyBullish } from "@/components/deck/sections/PrivacyBullish";
+import { PrivacyDiagram } from "@/components/deck/sections/PrivacyDiagram";
 import { ThePath } from "@/components/deck/sections/ThePath";
 import { Monetization } from "@/components/deck/sections/Monetization";
 import { Raise } from "@/components/deck/sections/Raise";
@@ -128,46 +129,55 @@ export default function Home() {
         <PrivacyBullish />
       </Section>
 
-      {/* 13) THE PATH — section 12 */}
+      {/* 13) PRIVACY FLOW — section 12 */}
       <Section
         sectionIndex={12}
-        kicker="13 — THE PATH"
+        kicker="13 — PRIVACY FLOW"
+        title="Privacy doesn't remove value. It concentrates value into fewer, harder-to-see places."
+      >
+        <PrivacyDiagram />
+      </Section>
+
+      {/* 14) THE PATH — section 13 */}
+      <Section
+        sectionIndex={13}
+        kicker="14 — THE PATH"
         title="Where this goes"
       >
         <ThePath />
       </Section>
 
-      {/* 14) MONETIZATION — section 13 */}
+      {/* 15) MONETIZATION — section 14 */}
       <Section
-        sectionIndex={13}
-        kicker="14 — MONETIZATION"
+        sectionIndex={14}
+        kicker="15 — MONETIZATION"
         title="Structural flows"
       >
         <Monetization />
       </Section>
 
-      {/* 15) THE RAISE — section 14 */}
+      {/* 16) THE RAISE — section 15 */}
       <Raise />
 
-      {/* 16) USE OF FUNDS + MILESTONES — section 15 */}
+      {/* 17) USE OF FUNDS + MILESTONES — section 16 */}
       <Section
-        sectionIndex={15}
-        kicker="16 — USE OF FUNDS + MILESTONES"
+        sectionIndex={16}
+        kicker="17 — USE OF FUNDS + MILESTONES"
         title=""
       >
         <UseOfFunds />
       </Section>
 
-      {/* 17) TEAM — section 16 */}
+      {/* 18) TEAM — section 17 */}
       <Section
-        sectionIndex={16}
-        kicker="17 — TEAM"
+        sectionIndex={17}
+        kicker="18 — TEAM"
         title="Built by operators"
       >
         <Team />
       </Section>
 
-      {/* 18) CLOSE — section 17 */}
+      {/* 19) CLOSE — section 18 */}
       <Close />
     </div>
   );
