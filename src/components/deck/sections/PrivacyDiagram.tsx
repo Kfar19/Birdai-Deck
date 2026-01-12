@@ -28,20 +28,17 @@ export function PrivacyDiagram() {
         className="flex origin-top"
       >
         <div className="flex flex-col items-center">
-          <div className="h-4 w-px bg-gradient-to-b from-zinc-600 to-red-500/50" />
-          <div className="rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 backdrop-blur-sm">
-            <div className="flex items-center gap-2 text-xs font-medium text-red-400">
-              <span className="text-base">❌</span>
-              <span>No visibility into:</span>
+          <div className="h-4 w-px bg-gradient-to-b from-zinc-600 to-emerald-500/50" />
+          <div className="rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-4 py-3 backdrop-blur-sm">
+            <div className="flex items-start gap-2 text-sm text-emerald-300">
+              <span className="mt-0.5">✓</span>
+              <span>
+                <span className="font-medium text-emerald-200">Encrypted pre-sequencing eliminates</span>{" "}
+                adversarial MEV attacks like front-running and sandwiching.
+              </span>
             </div>
-            <ul className="mt-2 space-y-1 text-xs text-red-300/80">
-              <li>• mempool contents</li>
-              <li>• user intent leakage</li>
-              <li>• plaintext order flow</li>
-              <li>• adversarial interception</li>
-            </ul>
           </div>
-          <div className="h-4 w-px bg-gradient-to-b from-red-500/50 to-zinc-600" />
+          <div className="h-4 w-px bg-gradient-to-b from-emerald-500/50 to-zinc-600" />
           <svg width="12" height="8" viewBox="0 0 12 8" className="text-zinc-500">
             <path d="M6 8L0 0h12L6 8z" fill="currentColor" />
           </svg>
@@ -73,15 +70,12 @@ export function PrivacyDiagram() {
         <div className="flex flex-col items-center">
           <div className="h-4 w-px bg-gradient-to-b from-zinc-600 to-amber-500/50" />
           <div className="rounded-xl border border-amber-500/30 bg-amber-500/10 px-4 py-3 backdrop-blur-sm">
-            <div className="space-y-1 text-xs text-amber-300">
-              <div className="flex items-center gap-2">
-                <span>⚠️</span>
-                <span>Privacy removes signals</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span>⚠️</span>
-                <span>Execution economics remain</span>
-              </div>
+            <div className="flex items-start gap-2 text-sm text-amber-300">
+              <span className="mt-0.5">⚠️</span>
+              <span>
+                <span className="font-medium text-amber-200">Execution economics still exist</span>{" "}
+                because ordering, inclusion, and state transitions still determine outcomes.
+              </span>
             </div>
           </div>
           <div className="h-4 w-px bg-gradient-to-b from-amber-500/50 to-zinc-600" />
