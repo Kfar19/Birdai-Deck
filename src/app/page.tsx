@@ -5,6 +5,7 @@ import { Hero } from "@/components/deck/sections/Hero";
 import { CoreBeliefs } from "@/components/deck/sections/CoreBeliefs";
 import { Thesis } from "@/components/deck/sections/Thesis";
 import { ExecutionGap } from "@/components/deck/sections/ExecutionGap";
+import { WhyWeExist } from "@/components/deck/sections/WhyWeExist";
 import { ExecutionRent } from "@/components/deck/sections/ExecutionRent";
 import { BlindSpot } from "@/components/deck/sections/BlindSpot";
 import { InfraFlow } from "@/components/deck/sections/InfraFlow";
@@ -57,127 +58,136 @@ export default function Home() {
         <ExecutionGap />
       </Section>
 
-      {/* 05) EXECUTION RENT — section 4 */}
+      {/* 05) WHY WE EXIST — section 4 */}
       <Section
         sectionIndex={4}
-        kicker="05 — EXECUTION RENT"
+        kicker="05 — WHY WE EXIST"
+        title="The execution reality layer for crypto markets"
+      >
+        <WhyWeExist />
+      </Section>
+
+      {/* 06) EXECUTION RENT — section 5 */}
+      <Section
+        sectionIndex={5}
+        kicker="06 — EXECUTION RENT"
         title="Execution rent scales with volume"
       >
         <ExecutionRent />
       </Section>
 
-      {/* 06) THE BLIND SPOT — section 5 */}
+      {/* 07) THE BLIND SPOT — section 6 */}
       <Section
-        sectionIndex={5}
-        kicker="06 — THE BLIND SPOT"
+        sectionIndex={6}
+        kicker="07 — THE BLIND SPOT"
         title="What we see that others miss"
       >
         <BlindSpot />
       </Section>
 
-      {/* 07) BIRDAI INFRA — section 6 */}
+      {/* 08) BIRDAI INFRA — section 7 */}
       <Section
-        sectionIndex={6}
-        kicker="07 — BIRDAI INFRA"
+        sectionIndex={7}
+        kicker="08 — BIRDAI INFRA"
         title="Validators → Indexers → Execution Intelligence"
       >
         <InfraFlow />
       </Section>
 
-      {/* 08) LIVE PROOF — section 7 */}
+      {/* 09) LIVE PROOF — section 8 */}
       <Section
-        sectionIndex={7}
-        kicker="08 — LIVE PROOF"
+        sectionIndex={8}
+        kicker="09 — LIVE PROOF"
         title="Execution intelligence in action"
       >
         <LiveProof />
       </Section>
 
-      {/* 09) THE REQUIREMENT — section 8 */}
+      {/* 10) THE REQUIREMENT — section 9 */}
       <Section
-        sectionIndex={8}
-        kicker="09 — THE REQUIREMENT"
+        sectionIndex={9}
+        kicker="10 — THE REQUIREMENT"
         title="Execution intelligence is only possible if you operate the infrastructure."
       >
         <InfraOwnership />
       </Section>
 
-      {/* 10) THE CATEGORY — section 9 */}
+      {/* 11) THE CATEGORY — section 10 */}
       <Section
-        sectionIndex={9}
-        kicker="10 — THE CATEGORY"
+        sectionIndex={10}
+        kicker="11 — THE CATEGORY"
         title="Programmable markets created a new layer: execution infrastructure."
       >
         <CategoryProblem />
       </Section>
 
-      {/* 11) WHY NOW — section 10 */}
+      {/* 12) WHY NOW — section 11 */}
       <Section
-        sectionIndex={10}
-        kicker="11 — WHY NOW"
+        sectionIndex={11}
+        kicker="12 — WHY NOW"
         title="Execution is becoming the new market structure."
       >
         <WhyNow />
       </Section>
 
-      {/* 12) WHY PRIVACY IS BULLISH — section 11 */}
+      {/* 13) WHY PRIVACY IS BULLISH — section 12 */}
       <Section
-        sectionIndex={11}
-        kicker="12 — WHY PRIVACY IS BULLISH"
+        sectionIndex={12}
+        kicker="13 — WHY PRIVACY IS BULLISH"
         title="Why Privacy Makes Execution the Scarce Signal"
       >
         <PrivacyBullish />
       </Section>
 
-      {/* 13) PRIVACY FLOW — section 12 */}
+      {/* 14) PRIVACY FLOW — section 13 */}
       <Section
-        sectionIndex={12}
-        kicker="13 — PRIVACY FLOW"
+        sectionIndex={13}
+        kicker="14 — PRIVACY FLOW"
         title="Privacy doesn't remove value. It concentrates value into fewer, harder-to-see places."
       >
         <PrivacyDiagram />
       </Section>
 
-      {/* 14) THE PATH — section 13 */}
+      {/* 15) THE PATH — section 14 */}
       <Section
-        sectionIndex={13}
-        kicker="14 — THE PATH"
+        sectionIndex={14}
+        kicker="15 — THE PATH"
         title="Where this goes"
       >
         <ThePath />
       </Section>
 
-      {/* 15) MONETIZATION — section 14 */}
+      {/* 16) MONETIZATION — section 15 */}
       <Section
-        sectionIndex={14}
-        kicker="15 — MONETIZATION"
+        sectionIndex={15}
+        kicker="16 — MONETIZATION"
         title="Structural flows"
       >
         <Monetization />
       </Section>
 
-      {/* 16) THE RAISE — section 15 */}
+      {/* 17) THE RAISE — section 16 */}
       <Raise />
 
-      {/* 17) USE OF FUNDS + MILESTONES — section 16 */}
+      {/* 18) USE OF FUNDS + MILESTONES — section 17 */}
       <Section
-        sectionIndex={16}
-        kicker="17 — USE OF FUNDS + MILESTONES"
+        sectionIndex={17}
+        kicker="18 — USE OF FUNDS + MILESTONES"
         title=""
       >
         <UseOfFunds />
       </Section>
 
-      {/* 18) TEAM — section 17 */}
+      {/* 19) TEAM — section 18 */}
       <Section
-        sectionIndex={17}
-        kicker="18 — TEAM"
+        sectionIndex={18}
+        kicker="19 — TEAM"
         title="Built by operators"
       >
         <Team />
       </Section>
 
-      {/* 19) CLOSE — section 18 */}
+      {/* 20) CLOSE — section 19 */}
       <Close />
     </div>
   );
