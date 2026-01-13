@@ -142,7 +142,7 @@ export default function Home() {
       <Section
         sectionIndex={14}
         kicker="15 — TEAM"
-        title="Built by operators"
+        title="Built by People Who've Already Run the System"
       >
         <Team />
       </Section>
