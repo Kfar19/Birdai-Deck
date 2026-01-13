@@ -1,11 +1,17 @@
 "use client";
 
+import { useState } from "react";
 import { LiveCounter } from "@/components/deck/LiveCounter";
+import { ShareModal } from "@/components/deck/ShareModal";
 import deck from "@/data/deck.json";
 import { motion } from "framer-motion";
 
 export function Hero() {
+  const [showPdfModal, setShowPdfModal] = useState(false);
+
   return (
+    <>
+      <ShareModal isOpen={showPdfModal} onClose={() => setShowPdfModal(false)} mode="pdf" />
     <section className="deck-section relative flex min-h-screen items-center justify-center overflow-hidden px-4 py-16 sm:px-8 md:px-16 md:py-20" data-section={0}>
       {/* Radial glow behind headline */}
       <div
@@ -107,12 +113,33 @@ export function Hero() {
           </span>
         </motion.div>
 
+        {/* Get PDF Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6, duration: 0.5 }}
+          className="mt-10"
+        >
+          <button
+            onClick={() => setShowPdfModal(true)}
+            className="group inline-flex items-center gap-2 rounded-full border border-amber-500/40 bg-amber-500/10 px-5 py-2.5 font-mono text-xs uppercase tracking-wider text-amber-300 transition-all hover:border-amber-500/60 hover:bg-amber-500/20 hover:shadow-[0_0_30px_-10px_rgba(251,191,36,0.4)]"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:scale-110">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="12" y1="18" x2="12" y2="12" />
+              <line x1="9" y1="15" x2="15" y2="15" />
+            </svg>
+            Get the PDF
+          </button>
+        </motion.div>
+
         {/* Scroll hint */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5, duration: 0.8 }}
-          className="mt-12 flex flex-col items-center gap-2"
+          className="mt-10 flex flex-col items-center gap-2"
         >
           <span className="font-mono text-[10px] uppercase tracking-widest text-zinc-600">
             Scroll to explore
@@ -129,5 +156,6 @@ export function Hero() {
         </motion.div>
       </div>
     </section>
+    </>
   );
 }

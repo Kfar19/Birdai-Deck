@@ -6,9 +6,11 @@ import { useState } from "react";
 interface ShareModalProps {
   isOpen: boolean;
   onClose: () => void;
+  mode?: "share" | "pdf";
 }
 
-export function ShareModal({ isOpen, onClose }: ShareModalProps) {
+export function ShareModal({ isOpen, onClose, mode = "share" }: ShareModalProps) {
+  const isPdf = mode === "pdf";
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -25,15 +27,17 @@ export function ShareModal({ isOpen, onClose }: ShareModalProps) {
       const res = await fetch("/api/share", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ firstName, lastName, email }),
+        body: JSON.stringify({ firstName, lastName, email, requestType: mode }),
       });
 
       if (!res.ok) {
         throw new Error("Failed to submit");
       }
 
-      // Copy link to clipboard
-      await navigator.clipboard.writeText(window.location.origin);
+      // Copy link to clipboard (for share mode)
+      if (!isPdf) {
+        await navigator.clipboard.writeText(window.location.origin);
+      }
       setIsSuccess(true);
     } catch {
       setError("Something went wrong. Please try again.");
@@ -77,10 +81,13 @@ export function ShareModal({ isOpen, onClose }: ShareModalProps) {
                 <>
                   <div className="mb-6">
                     <h3 className="text-xl font-semibold text-white sm:text-2xl">
-                      Get Shareable Link
+                      {isPdf ? "Get the PDF" : "Get Shareable Link"}
                     </h3>
                     <p className="mt-2 text-sm text-zinc-400">
-                      Enter your details to receive a link you can share with your team.
+                      {isPdf 
+                        ? "Enter your details and we'll send you the PDF deck."
+                        : "Enter your details to receive a link you can share with your team."
+                      }
                     </p>
                   </div>
 
@@ -161,10 +168,13 @@ export function ShareModal({ isOpen, onClose }: ShareModalProps) {
                     </svg>
                   </div>
                   <h3 className="text-xl font-semibold text-white sm:text-2xl">
-                    Link Copied!
+                    {isPdf ? "Request Received!" : "Link Copied!"}
                   </h3>
                   <p className="mt-2 text-sm text-zinc-400">
-                    The deck link has been copied to your clipboard. Share it with your team.
+                    {isPdf 
+                      ? "We'll send the PDF to your email shortly."
+                      : "The deck link has been copied to your clipboard. Share it with your team."
+                    }
                   </p>
                   <button
                     onClick={handleClose}
