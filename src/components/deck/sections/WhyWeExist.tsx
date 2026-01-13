@@ -168,6 +168,9 @@ export function WhyWeExist() {
         <div className="mt-2 text-xl font-bold text-amber-300 md:text-2xl">
           We are making the system legible.
         </div>
+        <div className="mt-6 text-base italic text-zinc-500 md:text-lg">
+          If Birdai were building on a simpler chain, it would actually be less interesting.
+        </div>
       </motion.div>
     </div>
   );
